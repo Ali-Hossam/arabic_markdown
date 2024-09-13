@@ -1,0 +1,78 @@
+@import url("variables.css");
+@import url("round_img.style.css");
+@import url("nav_bar.style.css");
+@import url("slide1.style.css");
+@import url("slide2.style.css");
+@import url("slide3.style.css");
+
+/*Reset margin and padding */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: var(--palette-clr4);
+  font-family: var(--main-font);
+}
+
+.slide {
+  color: var(--palette-clr1);
+  background-color: var(--palette-clr4);
+  padding: 0 var(--right-padding) 0 var(--left-padding);
+  height: var(--slide-height);
+  box-sizing: border-box;
+  margin: 0;
+  z-index: 1;
+}
+
+button {
+  background-color: var(--palette-clr2);
+  width: auto;
+  padding: 0 32px;
+  height: 40px;
+  border-radius: 12px;
+  margin: 20px 0;
+
+  border: none;
+  color: white;
+  font-size: large;
+  font-family: var(--main-font);
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: black;
+  
+}
+
+h1 {
+  font-size: 5vw;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+span {
+  text-decoration: double underline;
+}
+
+h2 {
+  font-size: 2vw;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+

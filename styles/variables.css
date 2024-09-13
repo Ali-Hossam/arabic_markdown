@@ -1,0 +1,17 @@
+:root {
+  /* --palette-clr1: #0C1844; */
+  --palette-clr1: #000;
+  --palette-clr2: #A0153E;
+  --palette-clr3: #ff8d8b;
+  --palette-clr4: #FFF5E1;
+
+  --border-radius: 3vw;
+  --nav-bar-height: 12vh;
+  --slide-height: 100vh;
+  --right-padding: 8vw;
+  --left-padding: 8vw;
+
+  --main-font: "Baloo Bhaijaan 2";
+
+  --swiper-navigation-sides-offset : -50%;
+}

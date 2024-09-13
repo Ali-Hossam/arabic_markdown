@@ -1,0 +1,31 @@
+#slide3 {
+  background-color: var(--palette-clr3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rectangle-card {
+  height: 60%;
+  width: 30%;
+  background-color: var(--palette-clr4);
+  border: 8px solid #000;
+  box-shadow: 15px 15px 0 #000;
+  border-radius: 8px;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text3d {
+  text-shadow: 5px 5px 0px#fffdbc, 10px 10px 2px #ff3737, 15px 15px 4px #68000a;
+}
+
+.rectangle-card img {
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12%;
+}
