@@ -1,0 +1,95 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--palette-clr4);
+}
+
+.register-form {
+  background-color: var(--palette-clr2);
+  padding: 20px 20px;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  box-shadow: 2px 2px #27272a;
+  /* justify-content: center; */
+}
+
+.form-group {
+  display:flex;
+  min-width: 400px;
+  flex-direction: column;
+  background-color:whitesmoke;
+  padding: 4px 12px;
+  margin: 16px 4px;
+  border-radius: 0.5em;
+  box-shadow: 4px 4px #27272a;
+  /* border: 2px solid black; */
+  /* box-shadow: 4px 4px 0 var(--palette-clr2); */
+}
+
+input {
+  border-radius: 4px;
+  max-height: 40px;
+  border: none;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: medium;
+  font-family: var(--main-font);
+  outline: none; /* Removes the default focus outline */
+}
+
+
+.register-button {
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 0 black;
+  color: black;
+  border: 2px solid black;
+  border-radius: 0.5em;
+  width: 60%;
+  max-height: 50px;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+}
+
+.register-button:hover {
+  color: white;
+  box-shadow: none;
+}
+
+label {
+  font-weight: bold;
+  font-family: var(--main-font);
+  color: #27272a;
+}
+
+.web_logo {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+
+.register-options {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  font-size: small;
+  color: white;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Inherits the color from the parent element */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.form-group:focus-within {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
