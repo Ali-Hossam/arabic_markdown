@@ -31,7 +31,7 @@
   height: 100%;
   position: relative;
   /* background-color: var(--palette-clr3); */
-  background-image: url("../assets/computer.jpg");
+  background-image: url("/assets/computer.jpg");
   background-position: top;
   align-self: flex-end;
   border-end-start-radius: 0;
@@ -50,7 +50,7 @@
   height: calc(2 * var(--border-radius));
   /* background-color: var(--palette-clr3); */
   background-color: black;
-  background-image: url("../assets/computer.jpg");
+  background-image: url("/assets/computer.jpg");
   border-radius: 50%;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .grid-item.bottom-bar {
-  background-image: url("../assets/computer.jpg");
+  background-image: url("/assets/computer.jpg");
   background-size: cover;
   background-position: center;
   display: flex;

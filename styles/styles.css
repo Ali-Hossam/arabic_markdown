@@ -1,9 +1,10 @@
 @import url("variables.css");
-@import url("round_img.style.css");
-@import url("nav_bar.style.css");
-@import url("slide1.style.css");
-@import url("slide2.style.css");
-@import url("slide3.style.css");
+@import url("partials/round_img.style.css");
+@import url("partials/nav_bar.style.css");
+@import url("main_page/slide1.style.css");
+@import url("main_page/slide2.style.css");
+@import url("main_page/slide3.style.css");
+@import url("register.style.css");
 
 /*Reset margin and padding */
 * {
@@ -74,5 +75,3 @@ footer {
   justify-content: center;
   display: flex;
 }
-
-
