@@ -1,10 +1,10 @@
 @import url("variables.css");
-@import url("partials/round_img.style.css");
-@import url("partials/nav_bar.style.css");
-@import url("main_page/slide1.style.css");
-@import url("main_page/slide2.style.css");
-@import url("main_page/slide3.style.css");
-@import url("register.style.css");
+@import url("partials/round_img.css");
+@import url("partials/nav_bar.css");
+@import url("main_page/slide1.css");
+@import url("main_page/slide2.css");
+@import url("main_page/slide3.css");
+@import url("register.css");
 
 /*Reset margin and padding */
 * {
@@ -35,7 +35,7 @@ button {
   width: auto;
   padding: 0 32px;
   height: 40px;
-  border-radius: 12px;
+  border-radius: 0.5em;
   margin: 20px 0;
 
   border: none;
