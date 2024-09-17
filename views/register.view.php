@@ -1,5 +1,4 @@
-<?php 
-require("partials/head.php") ?>
+<?php require("partials/head.php") ?>
 
 <body class="register-page">
   <form action="" class="register-form">
@@ -30,9 +29,7 @@ require("partials/head.php") ?>
       <a href="/views/login.view.php">تسجيل الدخول</a>
       <a href=""></a>
     </div>
-
   </form>
 </body>
-
 
 <?php require("partials/footer.php") ?>

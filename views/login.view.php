@@ -18,7 +18,7 @@ require("partials/head.php") ?>
     <button class="register-button">تسجيل الدخول</button>
     <div class="register-options">
       <a href="/views/register.view.php">مستخدم جديد</a>
-      <a href="">هل نسيت كلمة السر؟</a>
+      <a href="/views/forget_password.view.php">هل نسيت كلمة السر؟</a>
     </div>
 
   </form>
