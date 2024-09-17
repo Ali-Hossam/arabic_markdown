@@ -1,0 +1,45 @@
+.edit-page-container {
+  min-height: 100%;
+  max-height: 100%;
+  width: 100%;
+  background-color: white;
+  padding: 25px 12px 0px 12px; /* edit-bar height*/
+  display: flex;
+}
+
+.lines-numbers-container {
+  width: 40px;
+  min-height: 100%;
+  max-height: 100%;
+  background-color: antiquewhite;
+  padding: 2em 0;
+  user-select: none;
+  line-height: 1.65;
+  overflow-y: hidden;
+}
+
+.editor-area {
+  max-width: 48%;
+  min-width: 48%;
+  max-height: 100%;
+  padding: 2em 10px;
+  word-wrap: break-word;
+  /* white-space: pre-wrap; */
+}
+
+.content-editor {
+  line-height: 1.65;
+  overflow-y:auto;  
+  
+}
+.content-viewer {
+  border-right: 1px solid lightgray;
+}
+
+.content-editor .highlighted-bkg {
+  background-color: antiquewhite;
+}
+
+.line-number.highlighted-number{
+  color: crimson;
+}

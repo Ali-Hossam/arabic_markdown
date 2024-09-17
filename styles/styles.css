@@ -1,10 +1,12 @@
 @import url("variables.css");
-@import url("partials/round_img.css");
-@import url("partials/nav_bar.css");
+@import url("main_page/round_img.css");
+@import url("main_page/nav_bar.css");
 @import url("main_page/slide1.css");
 @import url("main_page/slide2.css");
 @import url("main_page/slide3.css");
 @import url("register.css");
+@import url("edit_page/edit_bar.css");
+@import url("edit_page/edit_page.css");
 
 /*Reset margin and padding */
 * {

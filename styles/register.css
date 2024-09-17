@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--palette-clr4);
+  /* background-color: var(--palette-clr4); */
 }
 
 .register-form {
