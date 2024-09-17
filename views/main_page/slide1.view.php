@@ -7,9 +7,11 @@
       الشكر لكل من ساهم في نجاح هذا المشروع الرائد في مجاله.
     </p>
 
-    <button class="start-btn"> ابدأ الكتابة الآن</button>
+    <button class="start-btn"
+        onclick="window.location.href='/views/edit.view.php'"> ابدأ الكتابة الآن</button>
+
   </div>
   <div class="slide1-left-column">
-    <?php require("views/partials/round_img.view.php") ?>
+    <?php require("views/main_page/round_img.view.php") ?>
   </div>
 </div>
