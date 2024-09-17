@@ -16,5 +16,3 @@ const swiper = new Swiper(".swiper-container", {
     prevEl: ".prev-button",
   },
 });
-
-console.log(swiper);
