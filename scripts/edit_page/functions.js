@@ -24,3 +24,8 @@ function createDivElement() {
   div.appendChild(document.createElement("br"));
   return div;
 }
+function getActiveElement() {
+  const selection = window.getSelection();
+  activeElement = selection.focusNode;
+  return activeElement;
+}
