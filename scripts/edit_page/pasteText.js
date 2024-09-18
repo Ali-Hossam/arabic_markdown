@@ -23,6 +23,3 @@ contentEditor.addEventListener("paste", (e) => {
   updateLineNumbers();
   highlightLine();
 });
-
-// Reposition Caret at the end of paste, and handle single br at the start of the div
-// and line number highlight and arabic numbers
