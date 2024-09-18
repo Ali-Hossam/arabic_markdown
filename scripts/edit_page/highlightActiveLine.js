@@ -49,3 +49,8 @@ contentEditor.addEventListener("keydown", () => {
   updateLineNumbers();
   // highlightLineNumber();
 });
+
+contentEditor.addEventListener("pointerdown", ()=> {
+  setTimeout(() => {
+    highlightLine();
+  }, 1);});
