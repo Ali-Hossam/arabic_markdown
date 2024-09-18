@@ -18,14 +18,29 @@ function trimEndingBr(element) {
   }
 }
 
-
 function createDivElement() {
   const div = document.createElement("div");
   div.appendChild(document.createElement("br"));
   return div;
 }
+
 function getActiveElement() {
   const selection = window.getSelection();
   activeElement = selection.focusNode;
   return activeElement;
+}
+
+function digitsToArabic(text) {
+  const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+
+  return text.replace(/\d/g, (match) => {
+    return arabicNumerals[+match];
+  });
+}
+
+function htmlDigitsToArabic(html) {
+  return html.replace(/>\d+</g, function (match) {
+    const arabicNumber = digitsToArabic(match);
+    return arabicNumber;
+  });
 }
