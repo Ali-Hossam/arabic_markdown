@@ -20,6 +20,8 @@
   <script src="/scripts/edit_page/highlightActiveLine.js"></script>
   <script src="/scripts/edit_page/pasteText.js"></script>
   <script src="/scripts/edit_page/syncScroll.js"></script>
+  <script src="/scripts/edit_page/arabicDigits.js"></script>
+  <script src="/scripts/edit_page/filterInput.js"></script>
   <script src="/scripts/edit_page/editPage.js"></script>
 
 </body>
