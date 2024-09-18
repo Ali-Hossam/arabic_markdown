@@ -3,7 +3,7 @@
 function addFirstLine() {
   const div = createDivElement();
   contentEditor.appendChild(div);
-  Cursor.insertInto(div);
+  Cursor.setPosition(div);
 }
 
 addFirstLine();
@@ -14,3 +14,7 @@ contentEditor.addEventListener("keydown", (e) => {
     addFirstLine();
   }
 });
+
+contentEditor.addEventListener("dragstart", (e) => {
+  e.preventDefault();
+})
