@@ -1,15 +1,13 @@
 .edit-bar {
-  position: fixed;
-  height: 50px;
+  position: relative;
   width: 100%;
   background-color: white;
   border-bottom: 1px solid lightgray;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
-  top: 0;
-  padding: 0 12px;
+  justify-content: space-between;
+  padding: 8px 12px;
 }
 
 .dropdown {
@@ -31,6 +29,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  /* make it perfect center in it's parent*/
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .edit-bar-icon img {
@@ -47,7 +50,7 @@
 }
 
 .edit-bar-icon:hover {
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.5);
 }
 
 .edit-bar-icons-subcontainer {
@@ -71,10 +74,11 @@
   color: black;
   font-size: medium;
   margin: 0 4px;
+  transition: background-color ease;
 }
 
 .edit-bar button:hover {
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.5);
 }
 
 ul {
@@ -108,6 +112,7 @@ li {
   text-decoration: none;
   font-weight: 500;
   box-shadow: 1px 1px 8px lightgray;
+  transition: all 100ms ease;
 }
 
 .edit-bar-icon:hover .tooltip {
