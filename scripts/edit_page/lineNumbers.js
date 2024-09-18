@@ -3,6 +3,7 @@ const linesNumbersContainer = document.querySelector(
 );
 const contentEditor = document.querySelector(".content-editor.editor-area");
 
+
 function updateLineNumbers() {
   // Sometimes a <br> tag is included at the begining of the contentEditor div
   // without a <div> container, so we remove it.
@@ -13,7 +14,7 @@ function updateLineNumbers() {
   const paragraphs = contentEditor.querySelectorAll("div");
   const numberOfParagraphs = paragraphs.length;
 
-  lineNumbersHTML = `<li> ${1} </li>`;
+  lineNumbersHTML = `<li>${1}</li>`;
 
   // for each paragraph if there is wrapped text we add <br> in their line No.
   for (let i = 1; i < numberOfParagraphs; i++) {
@@ -25,9 +26,10 @@ function updateLineNumbers() {
         .join("");
     }
 
-    lineNumbersHTML += `<li class='line-number'> ${i + 1} </li>`;
+    lineNumbersHTML += `<li class='line-number'>${i + 1}</li>`;
   }
 
+  lineNumbersHTML = htmlDigitsToArabic(lineNumbersHTML);
   linesNumbersContainer.innerHTML = lineNumbersHTML;
 }
 
