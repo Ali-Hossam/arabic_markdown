@@ -1,25 +1,14 @@
 // Remove styling from pasted text
-contentEditor.addEventListener("paste", (e) => {
+editor.addEventListener("paste", (e) => {
   e.preventDefault();
 
-  let pastedData = e.clipboardData.getData("text/plain").trim();
-  let paragraphs = pastedData.split(/\n/);
+  // Get pasted data as plain text
+  let plainText = (e.clipboardData || window.clipboardData).getData(
+    "text/plain"
+  );
 
-  // Create a div for each paragraph
-  paragraphs.forEach((paragraph) => {
-    const paragraphDiv = document.createElement("div");
+  document.execCommand("insertText", false, plainText);
 
-    // If there is a new line in the text it appears as empty string
-    if (!paragraph) {
-      paragraphDiv.innerHTML = "<br>";
-    } else {
-      paragraphDiv.textContent = paragraph;
-    }
-
-    contentEditor.appendChild(paragraphDiv);
-  });
-
-  Cursor.moveVertical(contentEditor, false);
-  updateLineNumbers();
-  highlightLine();
+  // Loop over the html and add </div> <div> after each br
+  e.target.innerHTML = e.target.innerHTML.replace(/<br>/g, "</div><br><div>");
 });
