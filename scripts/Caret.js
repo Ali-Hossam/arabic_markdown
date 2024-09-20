@@ -1,4 +1,4 @@
-class Cursor {
+class Caret {
   static moveToLineEnd(element) {
     element.focus();
     const range = document.createRange();
