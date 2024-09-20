@@ -31,7 +31,7 @@ function getActiveElement() {
 }
 
 function digitsToArabic(text) {
-  const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+  const arabicNumerals = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
 
   return text.replace(/\d/g, (match) => {
     return arabicNumerals[+match];
@@ -43,4 +43,10 @@ function htmlDigitsToArabic(html) {
     const arabicNumber = digitsToArabic(match);
     return arabicNumber;
   });
+}
+
+function delayExec(callback, delay) {
+  setTimeout(() => {
+    callback();
+  }, delay);
 }
