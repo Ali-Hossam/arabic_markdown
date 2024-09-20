@@ -2,19 +2,21 @@
 // directly in the content editor element text.
 function addFirstLine() {
   const div = createDivElement();
-  contentEditor.appendChild(div);
-  Cursor.setPosition(div);
+  editor.appendChild(div);
+  Caret.setPosition(div);
+  highlightLine();
 }
 
 addFirstLine();
-highlightLine();
 
-contentEditor.addEventListener("keydown", (e) => {
-  if(contentEditor.childElementCount === 0) {
-    addFirstLine();
-  }
+editor.addEventListener("keydown", (e) => {
+  setTimeout(() => {
+    if (editor.childElementCount === 0) {
+      addFirstLine();
+    }
+  }, 1);
 });
 
-contentEditor.addEventListener("dragstart", (e) => {
+editor.addEventListener("dragstart", (e) => {
   e.preventDefault();
-})
+});
