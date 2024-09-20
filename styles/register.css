@@ -1,9 +1,14 @@
 .register-page {
   /* background-color: var(--palette-clr4); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .register-form {
   background-color: var(--palette-clr2);
+  min-width: 400px;
   padding: 20px 20px;
   border-radius: 1em;
   display: flex;
@@ -15,13 +20,14 @@
 
 .form-group {
   display:flex;
-  min-width: 400px;
+  min-width: 80%;
   flex-direction: column;
   background-color:whitesmoke;
   padding: 4px 12px;
   margin: 16px 4px;
   border-radius: 0.5em;
   box-shadow: 4px 4px #3d4b51;
+  border: 2px solid #3d4b51;
   /* border: 2px solid black; */
   /* box-shadow: 4px 4px 0 var(--palette-clr2); */
 }
