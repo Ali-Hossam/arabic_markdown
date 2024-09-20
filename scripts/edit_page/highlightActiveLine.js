@@ -1,56 +1,69 @@
-let prevLineElement = null;
-let activeElement = null;
+let highlightDiv;
+
+const root = document.querySelector(":root");
+const rootStyles = getComputedStyle(root);
+const cssLineHeight = parseInt(
+  rootStyles.getPropertyValue("--line-height").trim()
+);
+const cssLinePadding = parseInt(
+  rootStyles.getPropertyValue("--line-padding").trim()
+);
+
+function createHighlightDiv() {
+  highlightDiv = document.createElement("div");
+  highlightDiv.classList.add("highlight-line");
+  document.body.appendChild(highlightDiv);
+}
 
 function highlightLine() {
   const selection = window.getSelection();
-  activeElement = selection.focusNode;
+  if (!selection.rangeCount) return;
 
-  // Active element is text node when the line isn't empty <div> some text </div>
-  if (activeElement && activeElement.nodeType === Node.TEXT_NODE) {
-    activeElement = activeElement.parentElement;
+  const range = selection.getRangeAt(0);
+  const currentNode = range.startContainer;
+
+  const rect = range.getBoundingClientRect();
+  const lineHeight = cssLineHeight + cssLinePadding;
+
+  if (!highlightDiv) {
+    createHighlightDiv();
   }
 
-  // Remove highlight from the previous line
-  if (prevLineElement) {
-    prevLineElement.classList.remove("highlighted-bkg");
+  const editorRect = editor.getBoundingClientRect();
+
+  // The top offset for the highlighting box is the top offset of the
+  // container or the top offset of the text if exists.
+  let caretOffsetTop;
+  if (!rect.top) {
+    caretOffsetTop =
+      currentNode.getBoundingClientRect().top + cssLinePadding / 2;
+  } else {
+    caretOffsetTop = rect.top + cssLinePadding;
+    // console.log(range.endOffset); // USE THIS OFFSET TO SPECIFY WHICH LINE (FIREFOx)
   }
 
-  if (activeElement) {
-    activeElement.classList.add("highlighted-bkg");
-    prevLineElement = activeElement;
-  }
+  // Set the highlight position based on the cursor's line
+  highlightDiv.style.top = `${
+    caretOffsetTop - cssLinePadding + window.scrollY
+  }px`;
+  highlightDiv.style.left = `${editorRect.left + window.scrollX}px`;
+  highlightDiv.style.height = `${lineHeight}px`; // Match the height of the text line
+  highlightDiv.style.width = `${editorRect.width}px`; // Full width of the editor
 }
 
-// function highlightLineNumber() {
-//   const selection = window.getSelection();
-//   activeElement = selection.focusNode;
-
-//   // Get the index of the active element in it's parent childs
-//   if (activeElement && activeElement.nodeType === Node.TEXT_NODE) {
-//     activeElement = activeElement.parentElement;
-//     const activeElementParent = activeElement.parentElement;
-//     const elementIdx = Array.prototype.indexOf.call(
-//       activeElementParent.children,
-//       activeElement
-//     );
-
-//     // Get the corresponding line number
-//     const linesNumbers = document.querySelectorAll(".lines-numbers-container .line-number");
-//     const activeLineNumber = linesNumbers[elementIdx - 1];
-//     activeLineNumber.classList.add("highlighted-number");
-//   }
-// }
-
-contentEditor.addEventListener("keydown", () => {
-  setTimeout(() => {
-    highlightLine();
-  }, 5);
-  
+editor.addEventListener("keydown", () => {
+  delayExec(highlightLine, 1);
   updateLineNumbers();
-  // highlightLineNumber();
 });
 
-contentEditor.addEventListener("pointerdown", ()=> {
-  setTimeout(() => {
-    highlightLine();
-  }, 1);});
+editor.addEventListener("pointerdown", () => {
+  delayExec(highlightLine, 1);
+});
+
+window.addEventListener("resize", () => {
+  delayExec(highlightLine, 1);
+});
+
+editor.addEventListener("scroll", () => {
+  highlightLine();
+});
