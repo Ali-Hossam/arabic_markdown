@@ -39,6 +39,11 @@
   transform: translatey(-10vh);
 }
 
+.double-underline {
+  text-decoration: double underline;
+}
+
+
 @keyframes cursor-blink-black {
   0% {
     border-left: 12px solid transparent;

@@ -1,6 +1,6 @@
 <div class="slide" id="slide2">
 
-  <h2>المهام الكثير المتنوعة</h2>
+  <h2 class="header2">المهام الكثير المتنوعة</h2>
 
   <div class="swiper-container">
     <div class="swiper-wrapper">

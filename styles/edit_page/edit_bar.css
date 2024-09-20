@@ -1,6 +1,7 @@
 .edit-bar {
   position: relative;
   width: 100%;
+  height: 5vh;
   background-color: white;
   border-bottom: 1px solid lightgray;
   display: flex;
@@ -8,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
+  z-index: 2;
 }
 
 .dropdown {
@@ -81,13 +83,13 @@
   background-color: rgba(211, 211, 211, 0.5);
 }
 
-ul {
+/* ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
+} */
 
-li {
+.list-element {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +106,7 @@ li {
   padding: 1px 0;
   position: absolute;
   z-index: 1;
-  top: 125%;
+  top: 120%;
   left: 50%;
   margin-left: -40px;
   opacity: 0;
@@ -132,4 +134,17 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dropdown-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-icon:hover {
+  background-color: lightgray;
 }

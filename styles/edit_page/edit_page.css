@@ -1,10 +1,11 @@
 .edit-page-container {
-  min-height: 100%;
-  max-height: 100%;
+  min-height: 95vh;
+  max-height: 95vh;
   width: 100%;
   background-color: white;
   padding: 0px 12px 0px 12px; /* edit-bar height*/
   display: flex;
+  z-index: 1;
 }
 
 .lines-numbers-container {
@@ -14,7 +15,7 @@
   background-color: antiquewhite;
   padding: 12px 0;
   user-select: none;
-  line-height: 1.65;
+  line-height: var(--line-height);
   overflow-y: hidden;
 }
 
@@ -22,24 +23,57 @@
   max-width: 48%;
   min-width: 48%;
   max-height: 100%;
-  padding: 12px;
   word-wrap: break-word;
+  /* position: relative; */
+  padding: 16px 12px;
+  font-family: "Amiri";
   /* white-space: pre-wrap; */
 }
 
-.content-editor {
-  line-height: 1.65;
-  overflow-y:auto;  
-  
+.editor {
+  line-height: var(--line-height);
+  overflow-y: auto;
+  outline: none;
 }
+
 .content-viewer {
   border-right: 1px solid lightgray;
+  overflow-y: hidden;
+  line-height: var(--line-height);
 }
 
-.content-editor .highlighted-bkg {
-  background-color: antiquewhite;
+.highlight-line {
+  border-radius: 2px;
+  border: 1px dashed rgba(141, 141, 141, 0.7);
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  padding: 0 var(--line-padding);
 }
 
-.line-number.highlighted-number{
+.lines-numbers-container {
+  padding: 16px 12px;
+}
+
+.line-number {
+  display: flex;
+  justify-content: center;
+}
+
+.line-number.highlighted-number {
   color: crimson;
+}
+
+.editor::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.editor::-webkit-scrollbar-track {
+  background: white;
+}
+
+.editor::-webkit-scrollbar-thumb {
+  background-color: gray; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid white; /* creates padding around scroll thumb */
 }

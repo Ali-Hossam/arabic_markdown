@@ -20,6 +20,7 @@ html {
   height: 100%;
   background-color: var(--palette-clr4);
   font-family: var(--main-font);
+  overflow: hidden;
 }
 
 .slide {
@@ -56,17 +57,13 @@ button:hover {
   
 }
 
-h1 {
+.header1 {
   font-size: 5vw;
   line-height: 1.3;
-  margin-bottom: 24px;
+  margin-bottom: 24px;  
 }
 
-span {
-  text-decoration: double underline;
-}
-
-h2 {
+.header2 {
   font-size: 2vw;
 }
 
