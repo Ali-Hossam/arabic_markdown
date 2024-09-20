@@ -1,20 +1,20 @@
 const linesNumbersContainer = document.querySelector(
   ".lines-numbers-container"
 );
-const contentEditor = document.querySelector(".content-editor.editor-area");
+const editor = document.querySelector(".editor.editor-area");
 
 
 function updateLineNumbers() {
   // Sometimes a <br> tag is included at the begining of the contentEditor div
   // without a <div> container, so we remove it.
-  trimStartingBr(contentEditor);
+  trimStartingBr(editor);
 
   // Get all child <div> elements of the content editor, where each <div>
   // represents a paragraph.
-  const paragraphs = contentEditor.querySelectorAll("div");
+  const paragraphs = editor.querySelectorAll("div");
   const numberOfParagraphs = paragraphs.length;
 
-  lineNumbersHTML = `<li>${1}</li>`;
+  lineNumbersHTML = `<li class='line-number'>${1}</li>`;
 
   // for each paragraph if there is wrapped text we add <br> in their line No.
   for (let i = 1; i < numberOfParagraphs; i++) {
@@ -34,12 +34,12 @@ function updateLineNumbers() {
 }
 
 // Add event listener to update lines numbers when typing
-contentEditor.addEventListener("input", (e) => {
+editor.addEventListener("input", (e) => {
   updateLineNumbers();
 });
 
 // Prevent the default behavior of 'Shift + Enter as it makes problems with numbering
-contentEditor.addEventListener("keydown", function (event) {
+editor.addEventListener("keydown", function (event) {
   if (event.shiftKey && event.key === "Enter") {
     event.preventDefault();
   }
