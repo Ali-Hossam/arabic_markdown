@@ -20,3 +20,13 @@ editor.addEventListener("keydown", (e) => {
 editor.addEventListener("dragstart", (e) => {
   e.preventDefault();
 });
+
+// Update caret position with inputs to the editor
+editor.addEventListener("input", () => {
+  Caret.updatePosition();
+});
+
+editor.addEventListener("pointerup", () => {
+  delayExec(Caret.updatePosition, 1);
+});
+
