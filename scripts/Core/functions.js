@@ -50,3 +50,21 @@ function delayExec(callback, delay) {
     callback();
   }, delay);
 }
+
+function loadLib(path) {
+  const script = document.createElement("script");
+  script.src = "/scripts/" + path;
+  document.head.appendChild(script);
+}
+
+function changeSVGcolor(objectsClass, color) {
+  const svgObjects = document.querySelectorAll(`.${objectsClass}`);
+
+  svgObjects.forEach((svg) => {
+    const paths = svg.contentDocument.querySelectorAll("path");
+
+    paths.forEach((path) => {
+      path.setAttribute("fill", color);
+    });
+  });
+}

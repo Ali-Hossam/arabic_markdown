@@ -1,4 +1,8 @@
 class Caret {
+  static currentElement = null;
+  static offset = null;
+  static range = null;
+
   static moveToLineEnd(element) {
     element.focus();
     const range = document.createRange();
@@ -59,10 +63,36 @@ class Caret {
     selection.addRange(range);
   }
 
-  static getPosition() {
+  static updatePosition() {
     const selection = window.getSelection();
-    const range = selection.getRangeAt(0);
-    const cursorPosition = range.startOffset;
-    return cursorPosition;
+    if (selection.rangeCount > 0) {
+      this.range = selection.getRangeAt(0);
+
+      this.offset = this.range.startOffset;
+
+      this.currentElement =
+        this.range.startContainer.nodeType === Node.TEXT_NODE
+          ? this.range.startContainer.parentNode
+          : this.range.startContainer;
+    }
+  }
+
+  static insertText(text) {
+    this.range.deleteContents(); // delete selected content if any
+    let textNode = document.createTextNode(text + "\u00A0");
+    this.range.insertNode(textNode);
+
+    this.currentElement.focus();
+
+    // Move the caret to the end of the added text
+    const newRange = document.createRange();
+    newRange.setStartAfter(textNode);
+    newRange.collapse(true);
+
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(newRange);
+
+    this.range = newRange;
   }
 }
