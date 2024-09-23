@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Rakkas&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Handjet:wght@100..900&family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Handjet:wght@100..900&display=swap" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap"
     rel="stylesheet" />
