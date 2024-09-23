@@ -1,30 +1,39 @@
 <?php require("partials/head.php") ?>
 
-<body class="register-page">
+<body class="edit-page">
   <?php require("edit_page/edit_bar.view.php") ?>
 
   <div class="edit-page-container">
     <ul class="lines-numbers-container"></ul>
 
-    <div class="content-editor editor-area" contenteditable="true">
-    </div>
+    <div class="editor editor-area" contenteditable="true"></div>
 
-    <div class="content-viewer editor-area">
+    <div class="content-viewer editor-area border">
 
     </div>
 
   </div>
-  <script src="/scripts/edit_page/functions.js"></script>
-  <script src="/scripts/Cursor.js"></script>
-  <script src="/scripts/edit_page/lineNumbers.js"></script>
-  <script src="/scripts/edit_page/highlightActiveLine.js"></script>
-  <script src="/scripts/edit_page/pasteText.js"></script>
-  <script src="/scripts/edit_page/syncScroll.js"></script>
-  <script src="/scripts/edit_page/arabicDigits.js"></script>
-  <script src="/scripts/edit_page/filterInput.js"></script>
-  <script src="/scripts/edit_page/editPage.js"></script>
+
+  <!-- Include Marked.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script src="/scripts/Core/functions.js"></script>
+  <script>
+    loadLib("Core/Caret.js");
+    loadLib("edit_page/utils/Theme.js")
+    loadLib("edit_page/shared.js");
+    loadLib("edit_page/toolbar/dropdown/init.js");
+    loadLib("edit_page/toolbar/dropdown/events.js");
+    loadLib("edit_page/toolbar/iconsEvents.js");
+    loadLib("edit_page/utils/filterInput.js")
+    loadLib("edit_page/utils/highlightActiveLine.js")
+    loadLib("edit_page/utils/lineNumbers.js")
+    loadLib("edit_page/utils/parseMd.js")
+    loadLib("edit_page/utils/pasteText.js")
+    loadLib("edit_page/utils/syncScroll.js")
+    loadLib("edit_page/editPage.js")
+  </script>
 
 </body>
-
 
 <?php require("partials/footer.php") ?>
