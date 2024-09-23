@@ -1,6 +1,5 @@
 let highlightDiv;
 
-const root = document.querySelector(":root");
 const rootStyles = getComputedStyle(root);
 const cssLineHeight = parseInt(
   rootStyles.getPropertyValue("--line-height").trim()

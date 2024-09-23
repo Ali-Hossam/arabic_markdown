@@ -1,9 +1,3 @@
-const linesNumbersContainer = document.querySelector(
-  ".lines-numbers-container"
-);
-const editor = document.querySelector(".editor.editor-area");
-
-
 function updateLineNumbers() {
   // Sometimes a <br> tag is included at the begining of the contentEditor div
   // without a <div> container, so we remove it.
