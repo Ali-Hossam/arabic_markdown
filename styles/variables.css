@@ -16,4 +16,8 @@
   --swiper-navigation-sides-offset : -50%;
   --line-height: 24px;
   --line-padding: 4px;
+
+  --hover-color: rgba(211, 211, 211, 0.2);
+
+  --scrollbar-track-color: white;
 }

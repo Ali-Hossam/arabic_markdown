@@ -1,15 +1,16 @@
 .edit-bar {
   position: relative;
   width: 100%;
-  height: 5vh;
-  background-color: white;
   border-bottom: 1px solid lightgray;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: 2px 12px;
   z-index: 2;
+  background-color: white;
+  box-shadow: 0px 0px 2px var(--hover-color);
+  min-height: 4vh;
 }
 
 .dropdown {
@@ -22,10 +23,6 @@
   cursor: pointer;
 }
 
-.dropdown:hover {
-  background-color: lightgray;
-}
-
 .edit-bar-icons-container {
   display: flex;
   flex-direction: row;
@@ -33,26 +30,26 @@
   align-items: center;
 
   /* make it perfect center in it's parent*/
-  position: absolute;
+  /* position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
 }
 
-.edit-bar-icon img {
+.edit-bar-icon img, object {
   width: 32px;
   padding: 8px;
-  margin: 2px;
+  margin: 2px 8px;
   border-radius: 4px;
-  cursor: pointer;
 }
 
 .edit-bar-icon {
   border-radius: 4px;
   position: relative;
+  cursor: pointer;
 }
 
 .edit-bar-icon:hover {
-  background-color: rgba(211, 211, 211, 0.5);
+  background-color: var(--hover-color);
 }
 
 .edit-bar-icons-subcontainer {
@@ -62,6 +59,7 @@
   padding: 0 6px;
   border-right: 2px solid lightgray;
   height: 30px;
+  position: relative;
 }
 
 .edit-bar-icons-subcontainer.no-border {
@@ -69,7 +67,7 @@
 }
 
 .edit-bar button {
-  background-color: white;
+  background-color: transparent;
   border: 2px solid lightgray;
   border-radius: 0.25em;
   height: fit-content;
@@ -80,14 +78,8 @@
 }
 
 .edit-bar button:hover {
-  background-color: rgba(211, 211, 211, 0.5);
+  background-color: var(--hover-color);
 }
-
-/* ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-} */
 
 .list-element {
   display: flex;
@@ -113,13 +105,17 @@
   font-size: 12px;
   text-decoration: none;
   font-weight: 500;
-  box-shadow: 1px 1px 8px lightgray;
+  box-shadow: 0px 0px 8px lightgray;
   transition: all 100ms ease;
 }
 
-.edit-bar-icon:hover .tooltip {
+.edit-bar-icon:hover .tooltip:not(.open) {
   visibility: visible;
   opacity: 1;
+}
+
+.tooltip.open {
+  visibility: hidden;
 }
 
 .website-logo {
@@ -138,13 +134,71 @@
 
 .dropdown-icon {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
+  transition: all 500ms ease;
 }
 
-.dropdown-icon:hover {
-  background-color: lightgray;
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: 3.8em;
+  right: 50%;
+  transform: translateX(25%);
+  min-width: 200%;
+  width: max-content;
+  visibility: hidden;
+  border: 2px solid lightgray;
+  /* box-shadow: 0px 0px 8px lightgray; */
+  border-radius: 0.25em;
+  background-color: white;
+  padding: 4px;
+}
+
+.dropdown-menu li {
+  border-radius: 0.25em;
+  padding: 2px 4px;
+  font-size: small;
+  transition: background-color 100ms ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: var(--hover-color);
+}
+
+.open {
+  visibility: visible;
+}
+
+.rotate180 {
+  transform: rotateZ(180deg);
+}
+
+.hoverBkg {
+  background-color: rgba(211, 211, 211, 0.5);
+}
+
+.rectangle {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  margin: 2px;
+  border: 1px solid black;
+  /* outline: 2px solid white; */
+}
+
+.colors-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows with automatic height */
+  min-width: fit-content;
+  right: auto;
+  transform: none;
+}
+
+.rectangle:hover {
+  transform: scale(1.2);
+  border: 1px dashed white;
+}
+
+.svg-object {
+  pointer-events: none;
 }

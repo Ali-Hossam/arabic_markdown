@@ -7,6 +7,7 @@
 @import url("register.css");
 @import url("edit_page/edit_bar.css");
 @import url("edit_page/edit_page.css");
+@import url("edit_page/md.css");
 
 /*Reset margin and padding */
 * {
