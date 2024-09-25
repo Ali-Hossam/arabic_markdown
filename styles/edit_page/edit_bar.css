@@ -49,16 +49,16 @@
 }
 
 .edit-bar-icon:hover {
-  background-color: var(--hover-color);
+  background-color: var(--highlight-color);
 }
 
 .edit-bar-icons-subcontainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 6px;
-  border-right: 2px solid lightgray;
-  height: 30px;
+  border: 1px dotted var(--highlight-color);
+  margin: 4px;
+  border-radius: 0.25em;
   position: relative;
 }
 
@@ -68,17 +68,19 @@
 
 .edit-bar button {
   background-color: transparent;
-  border: 2px solid lightgray;
+  border: 2px solid black;
   border-radius: 0.25em;
   height: fit-content;
   color: black;
   font-size: medium;
   margin: 0 4px;
   transition: background-color ease;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .edit-bar button:hover {
-  background-color: var(--hover-color);
+  background-color: var(--highlight-color);
 }
 
 .list-element {
@@ -130,6 +132,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row-reverse;
 }
 
 .dropdown-icon {
@@ -146,7 +149,7 @@
   min-width: 200%;
   width: max-content;
   visibility: hidden;
-  border: 2px solid lightgray;
+  border: 1px solid lightgray;
   /* box-shadow: 0px 0px 8px lightgray; */
   border-radius: 0.25em;
   background-color: white;
@@ -161,7 +164,7 @@
 }
 
 .dropdown-menu li:hover {
-  background-color: var(--hover-color);
+  background-color: var(--highlight-color);
 }
 
 .open {
@@ -201,4 +204,9 @@
 
 .svg-object {
   pointer-events: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
