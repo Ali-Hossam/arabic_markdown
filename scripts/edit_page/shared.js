@@ -30,6 +30,9 @@ const qutoesIcons = document
   .querySelector(".quotes-icons")
   .querySelectorAll(".list-element");
 
+// Export Button
+const exportButton = document.querySelector(".export");
+
 // Themes Colors
 const darkTheme = new ThemeColors("#282828", "#282828", "#4f4f4f", "white");
 const beigeTheme = new ThemeColors("#EAE4DD", "#EAE4DD", "lightgray", "black");
