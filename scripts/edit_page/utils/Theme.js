@@ -64,5 +64,9 @@ class ThemeManager {
     // Change scroll background & border
     document.documentElement.style.setProperty('--scrollbar-track-color', theme.primary);
     document.querySelector(".editor-area")
+    
+    // Change quotes highlight bkg color
+    document.documentElement.style.setProperty('--highlight-color', theme.highlight);
+    document.querySelector(".previewer")
   }
 }
