@@ -3,16 +3,17 @@
 <body class="edit-page">
   <?php require("edit_page/edit_bar.view.php") ?>
 
-  <div class="edit-page-container">
-    <ul class="lines-numbers-container"></ul>
+    <div class="edit-page-container">
+      <div class="flex-row editor-container">
+        <ul class="lines-numbers-container"></ul>
+        <div class="editor editor-area" contenteditable="true"></div>
+      </div>
 
-    <div class="editor editor-area" contenteditable="true"></div>
+      <div class="content-viewer editor-area border">
 
-    <div class="content-viewer editor-area border">
+      </div>
 
     </div>
-
-  </div>
 
   <!-- Include Marked.js from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
