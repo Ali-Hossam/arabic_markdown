@@ -10,10 +10,14 @@ fontsAr.forEach((font, index) => {
 });
 
 // Font Size dropdown menu
-const fontSizes = ["حجم1", "حجم1", "حجم1", "حجم1", "حجم1", "حجم1"];
-fontSizes.forEach((size) => {
-  let element = document.createElement("li");
-  element.textContent = size;
+let fontSize = 20;
+for (let index = 0; index < 6; index++) {
+  const element = document.createElement("li");
+  element.textContent = `حجم ${index + 1}`;
+  element.style.fontSize = `${fontSize}px`; 
+  element.style.fontFamily = "Amiri";
+
+  fontSize -= 2;
   fontSizeMenu.appendChild(element);
 });
 
