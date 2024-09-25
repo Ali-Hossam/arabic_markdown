@@ -10,7 +10,7 @@ function syncScroll(event) {
   linesNumbersContainer.scrollTop = scrollTop;
 
   // Update editor container scroll bar position
-  previewer.scrollTop = scrollTop;
+  // previewer.scrollTop = scrollTop;
 }
 
 editor.addEventListener("scroll", (event) => {
