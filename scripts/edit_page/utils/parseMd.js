@@ -1,6 +1,14 @@
+const renderer = new marked.Renderer();
+// Add custom class to the quotes
+renderer.blockquote = (quote) => {
+  console.log(quote);
+  return `<div class="md-quotes">${quote.text}</div>`;
+};
+
 marked.setOptions({
   gfm: true,
   breaks: true,
+  renderer: renderer
 });
 
 function parseMd() {
