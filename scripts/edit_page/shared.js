@@ -34,9 +34,9 @@ const qutoesIcons = document
 const exportButton = document.querySelector(".export");
 
 // Themes Colors
-const darkTheme = new ThemeColors("#282828", "#282828", "#4f4f4f", "white");
-const beigeTheme = new ThemeColors("#EAE4DD", "#EAE4DD", "lightgray", "black");
-const whiteTheme = new ThemeColors("white", "white", "lightgray", "black");
+const darkTheme = new ThemeColors("#282828", "#282828", "#4f4f4f55", "white");
+const beigeTheme = new ThemeColors("#EAE4DD", "#EAE4DD", "#6e6e6e75", "black");
+const whiteTheme = new ThemeColors("white", "white", "#6e6e6e75", "black");
 
 const themeManager = new ThemeManager(
   editPgContainer,
