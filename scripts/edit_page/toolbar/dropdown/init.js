@@ -19,7 +19,7 @@ for (let index = 0; index < 6; index++) {
 
   fontSize -= 2;
   fontSizeMenu.appendChild(element);
-});
+}
 
 // Color Palette dropdown menu
 const colors = ["black", "bisque", "whitesmoke"];
