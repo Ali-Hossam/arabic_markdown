@@ -46,3 +46,13 @@ const themeManager = new ThemeManager(
 );
 
 themeManager.addTheme(darkTheme, beigeTheme, whiteTheme);
+
+// Fonts map from css font name to mpdf font
+mpdfFontsMap = {
+  rakkas: "rakkas",
+  "Baloo Bhaijaan 2": "baloo",
+  "Reem Kufi": "KFGQPC Uthman Taha Naskh",
+  zain: "zain",
+  Lateef: "lateef",
+  Amiri: "amiri",
+};
