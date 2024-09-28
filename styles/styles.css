@@ -8,6 +8,7 @@
 @import url("edit_page/edit_bar.css");
 @import url("edit_page/edit_page.css");
 @import url("edit_page/md.css");
+@import url("edit_page/media_queries.css");
 
 /*Reset margin and padding */
 * {
@@ -74,4 +75,8 @@ footer {
   align-items: center;
   justify-content: center;
   display: flex;
+}
+
+.width-max {
+  width: 100%;
 }

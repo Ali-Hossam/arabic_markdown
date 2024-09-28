@@ -2,13 +2,15 @@
   border-right: 1px solid lightgray;
   overflow-y: auto;
   line-height: var(--line-height);
-  padding-left: 0px;
   min-width: 50%;
+  max-width: 50%;
 }
 
 .content-viewer h1, h2, h3, h4, h5, h6 {
   margin-top: 16px;
   margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.507);
 }
 
 .content-viewer li {
@@ -17,4 +19,17 @@
 
 .content-viewer img {
   width: 100%;
+}
+
+.content-viewer ol {
+  list-style-type: arabic-indic;
+  margin: 0;
+  padding: 0;
+}
+
+.md-quotes {
+  padding: 12px;
+  margin: 12px 0px 12px 12px;
+  border-radius: 4px;
+  background-color: var(--highlight-color);
 }

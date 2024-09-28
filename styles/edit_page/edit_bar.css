@@ -159,7 +159,7 @@
 .dropdown-menu li {
   border-radius: 0.25em;
   padding: 2px 4px;
-  font-size: small;
+  font-size: medium;
   transition: background-color 100ms ease;
 }
 

@@ -54,27 +54,3 @@
     margin-left: 4px;
   }
 }
-
-@media print {
-  body {
-    height: auto;
-    overflow: scroll;
-  }
-
-  .editor-container,
-  .edit-bar,
-  .highlight-line {
-    display: none;
-  }
-
-  .content-viewer {
-    display: block;
-    min-width: 100%;
-    min-height: 100%;
-    border: none;
-  }
-
-  .edit-page-container {
-    min-height: 100%;
-  }
-}
