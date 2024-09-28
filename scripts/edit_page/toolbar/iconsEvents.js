@@ -46,3 +46,43 @@ colorsMenu.querySelectorAll("li").forEach((color, index) => {
     themeManager.setTheme(index);
   });
 });
+
+// Export Button
+exportButton.addEventListener("click", (e) => {
+  let html;
+  const bkgColor = editPgContainer.style.backgroundColor;
+  let font = window.getComputedStyle(previewer).fontFamily;
+  font = removeFromText(font, '"');
+
+  // Send html conent of the previwer to the server in a post request
+  fetch("/styles/edit_page/md.css")
+    .then((response) => response.text())
+    .then((css) => {
+      html = `<!DOCTYPE html>
+              <html lang="ar" dir="rtl">
+                <head>
+                  <meta charset="UTF-8" />
+                  <style>
+                    ${removeFromText(css, ".content-viewer")}
+                    body {
+                      font-family: '${mpdfFontsMap[font]}';
+                      background-color: ${bkgColor};
+                    }
+
+                    .md-quotes {
+                      background-color: ${document.documentElement.style.getPropertyValue(
+                        "--highlight-color"
+                      )}
+                    }
+                  </style>
+                </head>
+                <body>
+                  ${previewer.innerHTML}
+                </body>
+              </html>
+          `;
+
+      console.log(html);
+      sendAjaxRequest({ html: html, filename: "Name" }, "/Core/router.php");
+    });
+});
