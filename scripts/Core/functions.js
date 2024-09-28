@@ -54,6 +54,7 @@ function delayExec(callback, delay) {
 function loadLib(path) {
   const script = document.createElement("script");
   script.src = "/scripts/" + path;
+  script.defer = true;
   document.head.appendChild(script);
 }
 
@@ -67,4 +68,34 @@ function changeSVGcolor(objectsClass, color) {
       path.setAttribute("fill", color);
     });
   });
+}
+
+function sendAjaxRequest(data, url) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        console.log("Success", xhr.responseText);
+      } else {
+        console.error("Error: ", xhr.statusText);
+      }
+    }
+  };
+
+  var data =
+    "html=" +
+    encodeURIComponent(data.html) +
+    "&filename=" +
+    encodeURIComponent(data.filename);
+
+  xhr.send(data);
+}
+
+
+function removeFromText(text, toRemove) {
+  const regex = new RegExp(toRemove, 'g');
+  return text.replace(regex, "");
 }
