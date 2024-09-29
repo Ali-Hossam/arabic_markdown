@@ -47,42 +47,89 @@ colorsMenu.querySelectorAll("li").forEach((color, index) => {
   });
 });
 
-// Export Button
-exportButton.addEventListener("click", (e) => {
-  let html;
-  const bkgColor = editPgContainer.style.backgroundColor;
+// Export Menu
+exportsMenu.querySelectorAll("li").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    filenamePopover.togglePopover();
+  });
+});
+
+function createPdfHtml(previewer, bkgColor, highlightColor, font, css) {
+  return `<!DOCTYPE html>
+          <html lang="ar" dir="rtl">
+            <head>
+              <meta charset="UTF-8" />
+              <style>
+                ${removeFromText(css, ".content-viewer")}
+                body {
+                  font-family: '${mpdfFontsMap[font]}';
+                  background-color: ${bkgColor};
+                }
+
+                .md-quotes {
+                  background-color: ${highlightColor}
+                }
+              </style>
+            </head>
+            <body>
+              ${previewer.innerHTML}
+            </body>
+          </html>`;
+}
+
+// Function to save the PDF
+function savePdf(filename) {
+  const documentStyle = document.documentElement.style;
+  const bkgColor = documentStyle.getPropertyValue("--theme-main-color");
+  const highlightColor = documentStyle.getPropertyValue(
+    "--theme-highlight-color"
+  );
+
   let font = window.getComputedStyle(previewer).fontFamily;
   font = removeFromText(font, '"');
 
-  // Send html conent of the previwer to the server in a post request
+  // Fetch CSS and create the PDF HTML content
   fetch("/styles/edit_page/md.css")
     .then((response) => response.text())
     .then((css) => {
-      html = `<!DOCTYPE html>
-              <html lang="ar" dir="rtl">
-                <head>
-                  <meta charset="UTF-8" />
-                  <style>
-                    ${removeFromText(css, ".content-viewer")}
-                    body {
-                      font-family: '${mpdfFontsMap[font]}';
-                      background-color: ${bkgColor};
-                    }
-
-                    .md-quotes {
-                      background-color: ${document.documentElement.style.getPropertyValue(
-                        "--highlight-color"
-                      )}
-                    }
-                  </style>
-                </head>
-                <body>
-                  ${previewer.innerHTML}
-                </body>
-              </html>
-          `;
-
+      const html = createPdfHtml(
+        previewer,
+        bkgColor,
+        highlightColor,
+        font,
+        css
+      );
       console.log(html);
-      sendAjaxRequest({ html: html, filename: "Name" }, "/Core/router.php");
+      sendAjaxRequest({ html: html, filename: filename }, "/Core/router.php");
     });
+}
+
+filenameInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    let inputText = filenameInput.value.trim();
+    if (inputText) {
+      // mpdf lib automatically adds .pdf to the file, so if the user enters
+      // .pdf we remove it.
+      inputText = !inputText.endsWith(".pdf")
+        ? inputText
+        : inputText.slice(0, -4);
+      savePdf(inputText);
+      filenamePopover.togglePopover();
+    }
+  }
 });
+
+filenamePopover
+  .querySelector("button.submit")
+  .addEventListener("click", (e) => {
+    let inputText = filenameInput.value.trim();
+    if (inputText) {
+      // mpdf lib automatically adds .pdf to the file, so if the user enters
+      // .pdf we remove it.
+      inputText = !inputText.endsWith(".pdf")
+        ? inputText
+        : inputText.slice(0, -4);
+      savePdf(inputText);
+      filenamePopover.togglePopover();
+    }
+  });

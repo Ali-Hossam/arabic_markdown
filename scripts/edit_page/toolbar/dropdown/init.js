@@ -28,6 +28,15 @@ for (let index = 0; index < 6; index++) {
   fontSizeMenu.appendChild(element);
 }
 
+// Exports
+const exports = ["pdf"];
+exports.forEach((exportType) => {
+  let element = document.createElement("li");
+  element.textContent = "صيغة\t\t" + exportType;
+  exportsMenu.appendChild(element);
+});
+
+
 // Color Palette dropdown menu
 const colors = ["black", "bisque", "whitesmoke"];
 colors.forEach((color) => {
