@@ -9,7 +9,7 @@
       <div class="editor editor-area" contenteditable="true"></div>
     </div>
 
-    <div class="content-viewer editor-area border" id="print"></div>
+    <div class="content-viewer editor-area border"></div>
   </div>
 
   <div id="filenamePopover" popover>
