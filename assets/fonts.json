@@ -1,0 +1,41 @@
+{
+  "fontDir": [
+    "/home/ali/websites/arabic_markdown/assets/Fonts/Amiri",
+    "/home/ali/websites/arabic_markdown/assets/Fonts/Aref_Ruqaa",
+    "/home/ali/websites/arabic_markdown/assets/Fonts/Baloo_Bhaijaan_2",
+    "/home/ali/websites/arabic_markdown/assets/Fonts/Zain",
+    "/home/ali/websites/arabic_markdown/assets/Fonts/Lateef"
+  ],
+  "fonts": {
+    "amiri": {
+      "R": "Amiri-Regular.ttf",
+      "useOTL": 255,
+      "useKashida": 75
+    },
+    "rakkas": {
+      "R": "Rakkas-Regular.ttf",
+      "useOTL": 255,
+      "useKashida": 75
+    },
+    "baloo": {
+      "R": "baloo.ttf",
+      "useOTL": 255,
+      "useKashida": 75
+    },
+    "zain": {
+      "R": "Zain-Regular.ttf",
+      "B": "Zain-Bold.ttf",
+      "E": "Zain-ExtraBold.ttf",
+      "L": "Zain-Light.ttf",
+      "XL": "Zain-ExtraLight.ttf",
+      "BL": "Zain-Black.ttf",
+      "useOTL": 255,
+      "useKashida": 75
+    },
+    "lateef": {
+      "R": "Lateef-Medium.ttf",
+      "useOTL": 255,
+      "useKashida": 75
+    }
+  }
+}
