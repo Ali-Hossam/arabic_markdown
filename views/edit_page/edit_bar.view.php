@@ -1,12 +1,14 @@
 <div class="edit-bar border">
   <div class="website-logo">
     <img src="/assets/pen_icon_no_bkg.png" alt="website-icon" />
+    <h1 class="logo">محبرة</h1>
+    <!-- <object class="svg-object" data="/assets/logo.svg" type="image/svg+xml"></object> -->
   </div>
 
   <div class="edit-bar-icons-container">
     <ul class="edit-bar-icons-subcontainer border">
       <li class="list-element edit-bar-icon dropdown">
-        <object class="svg-object" data="/assets/edit_page_icons/font.svg" alt="Font size" type="image/svg+xml"></object>
+        <object class="svg-object" data="/assets/edit_page_icons/font.svg" alt="Font type" type="image/svg+xml"></object>
         <span class="dropdown-icon">&#9660;</span>
         <span class="tooltip">نوع الخط</span>
         <ul class="dropdown-menu"></ul>
@@ -69,15 +71,17 @@
   </div>
 
   <ul class="register-icons-container">
-    <button>التسجيل</button>
-    <ul class="edit-bar-icons-subcontainer border register-icons-container export">
-      <li class="list-element edit-bar-icon">
+    <button class="edit-bar-button">التسجيل</button>
+    <ul class="edit-bar-icons-subcontainer border register-icons-container">
+      <li class="list-element edit-bar-icon export dropdown">
         <object class="svg-object" data="/assets/edit_page_icons/export.svg" type="image/svg+xml" alt="Export"></object>
         <span class="tooltip">تصدير</span>
+        <span class="dropdown-icon">&#9660;</span>
+        <ul class="dropdown-menu"></ul>
       </li>
       <li class="list-element edit-bar-icon dropdown">
         <object class="svg-object" data="/assets/edit_page_icons/colors.svg" alt="mode" type="image/svg+xml"></object>
-        <span class="tooltip">ليل/نهار</span>
+        <span class="tooltip">نمط الألوان</span>
         <span class="dropdown-icon">&#9660;</span>
         <ul class="dropdown-menu colors-menu"></ul>
       </li>
