@@ -31,5 +31,5 @@
   padding: 12px;
   margin: 12px 0px 12px 12px;
   border-radius: 4px;
-  background-color: var(--highlight-color);
+  background-color: var(--theme-highlight-color);
 }

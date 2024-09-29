@@ -17,7 +17,12 @@
   --line-height: 24px;
   --line-padding: 4px;
 
-  --highlight-color: #6e6e6e75;
-
+  
   --scrollbar-track-color: white;
+  
+  --theme-main-color: white;
+  --theme-secondary-color: white;
+  --theme-highlight-color: #6e6e6e75;
+  --theme-content-color: black;
+
 }

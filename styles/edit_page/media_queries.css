@@ -1,24 +1,3 @@
-@media (max-width: 980px) and (min-width: 500px) {
-  .edit-bar {
-    min-height: none;
-    height: max-content;
-  }
-
-  .edit-bar-icons-container {
-    flex-wrap: wrap;
-  }
-
-  .register-icons-container {
-    flex-wrap: wrap;
-  }
-
-  .edit-bar-icons-subcontainer {
-    border: 1px solid var(--highlight-color);
-    border-radius: 0.25em;
-    margin: 2px;
-  }
-}
-
 @media (max-width: 500px) {
   .edit-bar-icons-subcontainer {
     display: none;
@@ -26,6 +5,10 @@
 
   .register-icons-container {
     display: flex;
+  }
+
+  .website-logo .logo {
+    display: none;
   }
 }
 
@@ -47,10 +30,18 @@
     min-height: 50%;
     max-width: 100%;
     min-width: 100%;
-    border-bottom: 1px solid var(--highlight-color);
+    border-bottom: 1px solid var(--theme-highlight-color);
   }
 
   .highlight-line {
     margin-left: 4px;
+  }
+
+  .edit-bar-icons-container {
+    overflow-x: scroll;
+    justify-content: flex-start;
+  }
+  .edit-bar-icons-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
   }
 }

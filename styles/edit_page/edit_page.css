@@ -1,8 +1,9 @@
 .edit-page-container {
-  min-height: 96vh;
-  max-height: 96vh;
+  min-height: calc(100vh - 52px);
+  max-height: calc(100vh - 52px);
   width: 100%;
-  background-color: white;
+  background-color: var(--theme-main-color);
+  color: var(--theme-content-color);
   display: flex;
   z-index: 1;
 }
@@ -16,6 +17,7 @@
   line-height: var(--line-height);
   overflow-y: hidden;
   color: rgb(91, 91, 91);
+  background-color: var(--theme-main-color);
 }
 
 .editor-area {
