@@ -11,7 +11,6 @@ dropdowns.forEach((dropdown) => {
 // Close dropdown if clicking outside
 document.addEventListener("click", (e) => {
   dropdowns.forEach((dropdown) => {
-    console.log(e.target === dropdown);
     if (!dropdown.contains(e.target)) {
       dropdown.querySelector(".dropdown-menu").classList.remove("open");
       dropdown.querySelector(".tooltip").classList.remove("open");
