@@ -30,3 +30,4 @@ editor.addEventListener("pointerup", () => {
   delayExec(Caret.updatePosition, 1);
 });
 
+themeManager.setTheme(2); // white theme
