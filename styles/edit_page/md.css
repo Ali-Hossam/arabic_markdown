@@ -6,7 +6,12 @@
   max-width: 50%;
 }
 
-.content-viewer h1, h2, h3, h4, h5, h6 {
+.content-viewer h1,
+.content-viewer h2,
+.content-viewer h3,
+.content-viewer h4,
+.content-viewer h5,
+.content-viewer h6 {
   margin-top: 16px;
   margin-bottom: 8px;
   padding-bottom: 12px;

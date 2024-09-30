@@ -23,7 +23,6 @@ html {
   height: 100%;
   background-color: var(--palette-clr4);
   font-family: var(--main-font);
-  overflow: hidden;
 }
 
 .slide {
