@@ -12,7 +12,7 @@ const previewer = document.querySelector(".content-viewer.editor-area");
 // Toolbar icons
 const dropdowns = document.querySelectorAll(".dropdown");
 const dropDownMenus = document.querySelectorAll(".dropdown-menu");
-const [fontFamilyMenu, fontSizeMenu, colorsMenu] = dropDownMenus;
+const [fontFamilyMenu, fontSizeMenu, exportsMenu, colorsMenu] = dropDownMenus;
 
 const textFormatIcons = document
   .querySelector(".text-format-icons")
@@ -34,7 +34,7 @@ const qutoesIcons = document
 const exportButton = document.querySelector(".export");
 
 // Themes Colors
-const darkTheme = new ThemeColors("#282828", "#282828", "#4f4f4f55", "white");
+const darkTheme = new ThemeColors("#282828", "#282828", "#82828255", "white");
 const beigeTheme = new ThemeColors("#EAE4DD", "#EAE4DD", "#6e6e6e75", "black");
 const whiteTheme = new ThemeColors("white", "white", "#6e6e6e75", "black");
 
@@ -56,3 +56,7 @@ mpdfFontsMap = {
   Lateef: "lateef",
   Amiri: "amiri",
 };
+
+// Popover
+const filenamePopover = document.querySelector("#filenamePopover");
+const filenameInput = filenamePopover.querySelector("input");
