@@ -1,0 +1,25 @@
+.white-bkg {
+  background-color: white;
+}
+
+.radius-5rem {
+  border-radius: 0.5rem;
+}
+
+.width80 {
+  width: 80px;
+}
+
+.margin8px{
+  margin: 8px;
+}
+
+.padding8px {
+  padding: 8px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

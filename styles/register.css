@@ -2,8 +2,7 @@
   /* background-color: var(--palette-clr4); */
   display: flex;
   align-items: center;
-  justify-content: center;
-  
+  justify-content: center;  
 }
 
 .register-form {
@@ -24,7 +23,7 @@
   flex-direction: column;
   background-color:whitesmoke;
   padding: 4px 12px;
-  margin: 8px 4px;
+  margin: 8px 0px;
   border-radius: 0.5em;
   transition: all 100ms ease;
   /* box-shadow: 0px 0px 10px #3d4b51; */
@@ -42,6 +41,7 @@ input {
   font-size: medium;
   font-family: var(--main-font);
   outline: none; /* Removes the default focus outline */
+  width: 100%;
 }
 
 
@@ -97,4 +97,42 @@ a:hover {
 .form-group:focus-within {
   box-shadow: none;
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.554);
+}
+
+.form-error-msg {
+  color: rgb(255, 238, 0);
+  max-width: 400px;
+  text-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.show-password-icon {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+}
+
+.show-password-icon:hover {
+  background-color: var(--theme-highlight-color);
+  cursor: pointer;
+}
+
+.email-sent-container {
+  margin: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5rem;
+  flex-direction: column;
+  max-width: 360px;
+  text-align: center;
 }

@@ -10,6 +10,8 @@
 @import url("edit_page/md.css");
 @import url("edit_page/media_queries.css");
 @import url("edit_page/popover.css");
+@import url("general.css");
+@import url("profile.css");
 
 /*Reset margin and padding */
 * {
