@@ -13,10 +13,12 @@
   </div>
 
   <div id="filenamePopover" popover>
-    <input type="text" placeholder="اسم الملف">
-    <button class="edit-bar-button submit">حفظ</button>
+    <div class="flex">
+      <input type="text" placeholder="اسم الملف">
+      <button class="edit-bar-button submit">حفظ</button>
+    </div>
   </div>
-  
+
 
   <!-- Include Marked.js & pdf2html from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
