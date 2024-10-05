@@ -12,7 +12,7 @@ const previewer = document.querySelector(".content-viewer.editor-area");
 // Toolbar icons
 const dropdowns = document.querySelectorAll(".dropdown");
 const dropDownMenus = document.querySelectorAll(".dropdown-menu");
-const [fontFamilyMenu, fontSizeMenu, exportsMenu, colorsMenu] = dropDownMenus;
+const [fontFamilyMenu, fontSizeMenu, colorsMenu, exportsMenu, profileMenu] = dropDownMenus;
 
 const textFormatIcons = document
   .querySelector(".text-format-icons")
@@ -60,3 +60,9 @@ mpdfFontsMap = {
 // Popover
 const filenamePopover = document.querySelector("#filenamePopover");
 const filenameInput = filenamePopover.querySelector("input");
+
+// Submenus
+const subMenus = document.querySelectorAll(".sub-menu");
+const [picSubMenu, docSubMenu] = subMenus;
+
+const docMenuScrollbtns = docSubMenu.querySelectorAll("button");
