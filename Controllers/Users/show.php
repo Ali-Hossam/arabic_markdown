@@ -10,7 +10,9 @@ if (!$userId) {
 }
 
 $userProfile = new UserProfileService($db);
-$userProfile->setUserId($userId);
+$userProfile::setUserId($userId);
 $userNotesList = $userProfile->getUserNotesList();
 
-view("edit.view.php");
+view("edit.view.php", [
+  "userNotesList" => $userNotesList
+]);
