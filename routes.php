@@ -11,3 +11,4 @@ $router->get('/login', 'views/login.view.php');
 $router->post('/login', 'Controllers/Users/show.php');
 
 $router->post('/reset-password', 'Controllers/Users/resetPass.php');
+$router->post('/signout', 'Controllers/Users/signout.php');
