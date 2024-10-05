@@ -36,7 +36,6 @@ exports.forEach((exportType) => {
   exportsMenu.appendChild(element);
 });
 
-
 // Color Palette dropdown menu
 const colors = ["black", "bisque", "whitesmoke"];
 colors.forEach((color) => {
@@ -45,3 +44,15 @@ colors.forEach((color) => {
   element.style.backgroundColor = color;
   colorsMenu.appendChild(element);
 });
+
+// Profile pictures menu
+for (let index = 1; index < 17; index++) {
+  let img = document.createElement("img");
+  img.src = `/assets/profiles/users-${index}.svg`;
+  img.classList.add("profile-pic");
+
+  let element = document.createElement("li");
+  element.appendChild(img);
+
+  picSubMenu.querySelector("ul").appendChild(element);
+}
