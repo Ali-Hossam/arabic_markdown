@@ -1,15 +1,21 @@
 <?php
-require_once base_path("Core/Auth.php");
+require base_path("Core/Auth.php");
+require base_path("Core/Session.php");
+require base_path("Models/UserModel.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+use Core\Auth;
+use Core\ErrorsManager;
+use Core\Session;
+
 class AuthController
 {
   private $userModel;
-  public function __construct($model)
+  public function __construct()
   {
-    $this->userModel = $model;
+    $this->userModel = new UserModel();
   }
 
   public function register()
@@ -35,7 +41,8 @@ class AuthController
       return false;
     }
 
-    $this->userModel->addUser($username, $password1, $email);
+    $id = $this->userModel->addUser($username, $password1, $email);
+    Session::put('user_id', $id);
     return true;
   }
 
@@ -50,7 +57,9 @@ class AuthController
     }
 
     // Set session (to-do)
-    return $this->userModel->findUserIdByEmail($email);
+    $id = $this->userModel->findUserIdByEmail($email);
+    Session::put('user_id', $id);
+    return true;
   }
 
   public function forgetPassword()
