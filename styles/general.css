@@ -7,7 +7,15 @@
 }
 
 .width80 {
-  width: 80px;
+  width: 80px !important;
+}
+
+.width40px {
+  width: 40px !important;
+}
+
+.height80 {
+  height: 80px !important;
 }
 
 .width20 {
@@ -15,7 +23,11 @@
 }
 
 .margin8px{
-  margin: 8px;
+  margin: 8px !important;
+}
+
+.margin16px{
+  margin: 16px !important;
 }
 
 .padding8px {
@@ -31,6 +43,11 @@
   border-top: 1px solid var(--theme-highlight-color);
   border-radius: 0;
   margin-top: 4px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--theme-highlight-color);
+  margin-bottom: 4px;
 }
 
 .grid {
@@ -59,4 +76,14 @@
 
 .space-between {
   justify-content: space-between !important;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.height100 {
+  height: 100%;
 }

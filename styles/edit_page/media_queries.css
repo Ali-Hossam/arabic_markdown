@@ -25,6 +25,7 @@
   .content-viewer {
     max-width: 100%;
     min-width: 100%;
+    border: none;
   }
   .editor-container {
     min-height: 50%;

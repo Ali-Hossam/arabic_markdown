@@ -1,3 +1,7 @@
+.edit-page {
+  overflow-y: hidden;
+}
+
 .edit-page-container {
   min-height: calc(100vh - 52px);
   max-height: calc(100vh - 52px);

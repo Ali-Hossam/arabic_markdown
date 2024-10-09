@@ -227,3 +227,15 @@
   display: flex;
   flex-direction: row;
 }
+
+#filename-input {
+  width: 160px;
+  margin: 0;
+  padding: 3px 8px;
+  background-color: var(--theme-main-color);
+  color: var(--theme-content-color);
+}
+
+#filename-input:focus {
+  outline: 2px solid var(--theme-content-color);
+}

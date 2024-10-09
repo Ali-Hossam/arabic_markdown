@@ -130,7 +130,7 @@ a:hover {
   padding: 8px;
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: gainsboro;
   border-radius: 0.5rem;
   flex-direction: column;
   max-width: 360px;
