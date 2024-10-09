@@ -1,5 +1,6 @@
 <?php
-require_once base_path("Core/Router.php");
+require base_path("Core/Router.php");
+use \Core\Router;
 
 $router = new Router();
 $router->get('/', 'views/home.view.php');
@@ -8,13 +9,13 @@ $router->post('/register', 'Controllers/Users/create.php');
 
 
 $router->get('/login', 'views/login.view.php');
-$router->post('/login', 'Controllers/Users/show.php');
+$router->post('/login', 'Controllers/Users/login.php');
 
 $router->post('/reset-password', 'Controllers/Users/resetPass.php');
 $router->post('/signout', 'Controllers/Users/signout.php');
 
-$router->delete('/note/delete', 'Controllers/Note/delete.php');
+$router->delete('/note', 'Controllers/Note/delete.php');
 
-$router->put('/updateAvatar', 'Controllers/user/updateAvatar.php');
+$router->put('/avatar', 'Controllers/User/updateAvatar.php');
 
-$router->get('/note/get', 'Controllers/Note/show.php');
+$router->get('/note', 'Controllers/Note/show.php');
