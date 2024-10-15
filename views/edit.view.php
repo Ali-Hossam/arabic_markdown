@@ -1,7 +1,10 @@
-<?php require("partials/head.php") ?>
+<?php
+$title = "Edit";
+require("partials/head.php")
+?>
 
 <body class="edit-page">
-  <?php require("edit_page/edit_bar.view.php") ?>
+  <?php require("edit/edit_bar.view.php") ?>
 
   <div class="edit-page-container">
     <div class="flex-row editor-container">
@@ -22,22 +25,27 @@
 
   <!-- Include Marked.js & pdf2html from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="/scripts/Core/functions.js"></script>
-  <script>
-    loadLib("Core/Caret.js");
-    loadLib("edit_page/utils/Theme.js")
-    loadLib("edit_page/shared.js");
-    loadLib("edit_page/toolbar/dropdown/init.js");
-    loadLib("edit_page/toolbar/dropdown/events.js");
-    loadLib("edit_page/toolbar/iconsEvents.js");
-    loadLib("edit_page/utils/filterInput.js")
-    loadLib("edit_page/utils/highlightActiveLine.js")
-    loadLib("edit_page/utils/lineNumbers.js")
-    loadLib("edit_page/utils/parseMd.js")
-    loadLib("edit_page/utils/pasteText.js")
-    loadLib("edit_page/utils/syncScroll.js")
-    loadLib("edit_page/editPage.js")
+  <script src="https://unpkg.com/dompurify@2/dist/purify.min.js"></script>
+
+  <script type="module">
+    import {
+      loadLib
+    } from "/scripts/core/functions.js";
+    loadLib("edit/toolbar/dropdown/init.js");
+    loadLib("edit/toolbar/dropdown/events.js");
+    loadLib("edit/utils/filterInput.js")
+    loadLib("edit/utils/highlightActiveLine.js")
+    loadLib("edit/utils/lineNumbers.js")
+    loadLib("edit/utils/parseMd.js")
+    loadLib("edit/utils/pasteText.js")
+    loadLib("edit/utils/syncScroll.js")
+    loadLib("edit/editPage.js")
+    loadLib("profile/deleteNote.js")
+    loadLib("profile/showNote.js")
+    loadLib("edit/toolbar/iconsEvents.js");
+    loadLib("edit/toolbar/saveNote.js");
   </script>
+
 
 </body>
 

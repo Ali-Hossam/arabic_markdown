@@ -1,13 +1,13 @@
 <?php
-require_once base_path("Core/Database.php");
+use \Core\MongoDatabase;
 
 class UserModel
 {
   private $db;
 
-  public function __construct($db)
+  public function __construct()
   {
-    $this->db = $db;
+    $this->db = new MongoDatabase();
   }
 
   public function getUserByEmail($email)
@@ -45,10 +45,12 @@ class UserModel
       "name" => $username,
       "password" => password_hash($password, PASSWORD_BCRYPT),
       "email" => $email,
+      "picture" => "/assets/profiles/users-1.svg",
       "notes" => []
     ];
 
-    $this->db->insertOne(DATA_COLLECTION, $data);
+    $result = $this->db->insertOne(DATA_COLLECTION, $data);
+    return $result->getInsertedId();
   }
 
   public function storeResetToken($email, $token)

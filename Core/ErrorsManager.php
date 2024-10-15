@@ -1,5 +1,5 @@
 <?php
-
+namespace Core;
 class ErrorsManager
 {
   private static $errors = []; // 2d array [[errorLocation] => [error1, error2]]

@@ -1,9 +1,11 @@
 <?php
-require("partials/head.php") ?>
+$title = "Login";
+require("partials/head.php") 
+?>
 
 <body class="register-page">
   <form action="/login" method="POST" class="register-form">
-    <img src="/assets/pen_icon_no_bkg.png" class="web_logo" width="140px">
+    <?php require("register/logo.php") ?>
 
     <div class="form-group">
       <label for="email">البريد الإلكتروني</label>
@@ -21,10 +23,14 @@ require("partials/head.php") ?>
     <p class="form-error-msg">
       <?php
       // Class doesn't exit if the page is loaded from <a href="link"> tag
-      if (class_exists("ErrorsManager")) {
-        if (ErrorsManager::has('login')) {
-          echo implode("<br>", ErrorsManager::get('login'));
+      try {
+        if (class_exists("\Core\ErrorsManager")) {
+          if (\Core\ErrorsManager::has('login')) {
+            echo implode("<br>", \Core\ErrorsManager::get('login'));
+          }
         }
+      } catch (Exception $e) {
+        echo "An error occurred: " . htmlspecialchars($e->getMessage());
       }
       ?>
     </p>
@@ -36,9 +42,12 @@ require("partials/head.php") ?>
     </div>
 
   </form>
-  <script src="/scripts/Core/functions.js"></script>
-  <script>
-    loadLib("register_page/form.js");
+  <script type="module">
+    import {
+      loadLib
+    } from "/scripts/core/functions.js";
+
+    loadLib("register/form.js");
   </script>
 </body>
 

@@ -1,15 +1,16 @@
 @import url("variables.css");
-@import url("main_page/round_img.css");
-@import url("main_page/nav_bar.css");
-@import url("main_page/slide1.css");
-@import url("main_page/slide2.css");
-@import url("main_page/slide3.css");
+@import url("home/round_img.css");
+@import url("home/nav_bar.css");
+@import url("home/slide1.css");
+@import url("home/slide2.css");
+@import url("home/slide3.css");
+@import url("home/media_queries.css");
 @import url("register.css");
-@import url("edit_page/edit_bar.css");
-@import url("edit_page/edit_page.css");
-@import url("edit_page/md.css");
-@import url("edit_page/media_queries.css");
-@import url("edit_page/popover.css");
+@import url("edit/edit_bar.css");
+@import url("edit/edit_page.css");
+@import url("edit/md.css");
+@import url("edit/media_queries.css");
+@import url("edit/popover.css");
 @import url("general.css");
 @import url("profile.css");
 
@@ -23,19 +24,38 @@
 body,
 html {
   height: 100%;
-  background-color: var(--palette-clr4);
+  background: var(--background-img);
   font-family: var(--main-font);
 }
 
 .slide {
   color: var(--palette-clr1);
   background-color: var(--palette-clr4);
+  background: var(--background-img);
   padding: 0 var(--right-padding) 0 var(--left-padding);
-  height: var(--slide-height);
+  min-height: var(--slide-height);
   box-sizing: border-box;
   margin: 0;
   z-index: 1;
 }
+
+.slide h2 {
+  color: black;
+  width: 100%;
+  text-align: center;
+  border: 2px double black;
+  background-color: black;
+  margin: 10px 0 20px;
+  line-height: 0em;
+  border-radius: 0.5rem;
+  font-size: clamp(20px, 2.2vw, 80px);
+}
+
+.slide h2 span {
+  padding: 0 10px;
+  background: var(--background-img);
+}
+
 
 button {
   background-color: var(--palette-clr2);
@@ -49,7 +69,7 @@ button {
   color: white;
   font-size: large;
   font-family: var(--main-font);
-  font-weight: bold;
+  font-weight: 800;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -62,9 +82,10 @@ button:hover {
 }
 
 .header1 {
-  font-size: 5vw;
+  font-size: clamp(5vh, 5vw, 5vw);
   line-height: 1.3;
-  margin-bottom: 24px;  
+  margin-bottom: 24px;
+  font-weight: 900;
 }
 
 .header2 {

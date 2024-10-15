@@ -32,11 +32,12 @@
   background-color: unset;
 }
 
-#user-doc {
+#user-docs {
   overflow-y: scroll;
+  min-height: 170px;
 }
 
-#user-doc::-webkit-scrollbar {
+#user-docs::-webkit-scrollbar {
   display: none; /* Hide scrollbar */
   position: relative;
 }
@@ -85,7 +86,7 @@
 .menu-button {
   margin: 0;
   width: 100%;
-  font-size: small;
+  font-size: medium;
   padding: 0;
   height: fit-content;
   margin-top: 12px;

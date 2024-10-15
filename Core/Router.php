@@ -1,4 +1,5 @@
 <?php
+namespace Core;
 class Router
 {
   private $routes = [];
@@ -18,6 +19,16 @@ class Router
     $this->add('POST', $path, $callback);
   }
 
+  public function put($path, $callback)
+  {
+    $this->add('PUT', $path, $callback);
+  }
+  
+  public function delete($path, $callback)
+  {
+    $this->add("DELETE", $path, $callback);
+  }
+
   public function resolve($method, $path)
   {
     // normalize the path
@@ -28,7 +39,8 @@ class Router
       return;
     }
 
+
     http_response_code(404);
-    echo "404 Not Found";
+    view("404.php");
   }
 }

@@ -1,8 +1,12 @@
-<?php require("partials/head.php") ?>
+<?php
+$title = "Register";
+require("partials/head.php")
+?>
 
 <body class="register-page">
   <form action="/register" method="POST" class="register-form">
-    <img src="/assets/pen_icon_no_bkg.png" class="web_logo" width="140px">
+
+    <?php require("register/logo.php") ?>
 
     <div class="form-group">
       <label for="username">الإسم</label>
@@ -32,14 +36,14 @@
 
     <p class="form-error-msg">
       <?php
-      // Class doesn't exit if the page is loaded from <a href="link"> tag
-      if (class_exists("ErrorsManager")) {
-        if (ErrorsManager::has('register')) {
-          echo implode("<br>", ErrorsManager::get('register'));
+      if (class_exists("\Core\ErrorsManager")) {
+        if (\Core\ErrorsManager::has('register')) {
+          echo implode("<br>", \Core\ErrorsManager::get('register'));
         }
       }
       ?>
     </p>
+
 
     <button class="register-button">التسجيل</button>
     <div class="register-options">
@@ -48,9 +52,11 @@
     </div>
   </form>
 
-  <script src="/scripts/Core/functions.js"></script>
-  <script>
-    loadLib("register_page/form.js");
+  <script type="module">
+    import {
+      loadLib
+    } from "/scripts/core/functions.js";
+    loadLib("register/form.js");
   </script>
 
 </body>

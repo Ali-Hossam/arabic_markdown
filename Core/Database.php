@@ -1,22 +1,28 @@
 <?php
-require_once 'vendor/autoload.php';
-require base_path("config.php");
+
+namespace Core;
+
+require_once base_path('vendor/autoload.php');
+require_once base_path("config.php");
+
+use MongoDB\Client;
+use Exception;
 
 class MongoDatabase
 {
   private $client;
   private $db;
 
-  public function __construct($host=DB_HOST, $dbname=DB_NAME, $username = null, $password = null)
+  public function __construct($host = DB_HOST, $dbname = DB_NAME, $username = null, $password = null)
   {
     try {
       $uri = "mongodb://$host";
       if ($username && $password) {
         $uri = "mongodb://$username:$password@$host";
       }
-      $this->client = new MongoDB\Client($uri);
+      $this->client = new Client($uri);
       $this->db = $this->client->$dbname;
-    } catch (MongoDB\Driver\Exception $e) {
+    } catch (Exception $e) {
       die("Error Connecting to MongoDB: " . $e->getMessage());
     }
   }
@@ -36,19 +42,20 @@ class MongoDatabase
   {
     try {
       $collection = $this->getCollection($collectionName);
-      $collection->insertOne($data);
-    } catch (MongoDB\Driver\Exception\Exception $e) {
+      return $collection->insertOne($data);
+    } catch (Exception $e) {
       die("Insert error: " . $e->getMessage());
     }
   }
 
-  public function updateOne($collectionName, $filter, $updateData)
+  public function updateOne($collectionName, $filter, $updateData, $upsert = false)
   {
     try {
       $collection = $this->getCollection($collectionName);
-      $result = $collection->updateOne($filter, $updateData);
-      return $result; // Optionally return the result
-    } catch (MongoDB\Driver\Exception\Exception $e) {
+      $options = ['upsert' => $upsert];
+      $result = $collection->updateOne($filter, $updateData, $options);
+      return $result;
+    } catch (Exception $e) {
       die("Update error: " . $e->getMessage());
     }
   }

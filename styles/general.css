@@ -87,3 +87,27 @@
 .height100 {
   height: 100%;
 }
+
+.error {
+  background-color: indianred !important;
+  transition: background-color 0.5s;
+}
+
+.correct {
+  font-weight: bold;
+  text-align: center;
+  background-color: mediumaquamarine !important;
+  font-size: small;
+}
+
+.center {
+  align-self: center;
+}
+
+.flexO {
+  display: flex;
+}
+
+.align-center {
+  align-items: center !important;
+}

@@ -11,7 +11,7 @@
   --right-padding: 8vw;
   --left-padding: 8vw;
 
-  --main-font: "Baloo Bhaijaan 2";
+  --main-font: "zain";
 
   --swiper-navigation-sides-offset : -50%;
   --line-height: 24px;
@@ -25,4 +25,5 @@
   --theme-highlight-color: #6e6e6e75;
   --theme-content-color: black;
 
+  --background-img: url("/assets/grain1.jpeg");
 }

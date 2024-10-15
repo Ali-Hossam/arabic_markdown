@@ -7,6 +7,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 use Core\Auth;
+use Core\Cookies;
 use Core\ErrorsManager;
 use Core\Session;
 
@@ -31,6 +32,11 @@ class AuthController
       return false;
     }
 
+    if ($this->userModel->getUserByEmail($email)) {
+      ErrorsManager::add("register", "There is an account with this Email.");
+      return false;
+    }
+    
     if (!Auth::password($password1)) {
       ErrorsManager::add("register", "Password must have special characters");
       return false;
@@ -43,7 +49,8 @@ class AuthController
 
     $id = $this->userModel->addUser($username, $password1, $email);
     Session::put('user_id', $id);
-    return true;
+    Cookies::put('user_id', $id, 7);
+    return $id;
   }
 
   public function login()
@@ -59,7 +66,8 @@ class AuthController
     // Set session (to-do)
     $id = $this->userModel->findUserIdByEmail($email);
     Session::put('user_id', $id);
-    return true;
+    Cookies::put('user_id', $id, 7);
+    return $id;
   }
 
   public function forgetPassword()

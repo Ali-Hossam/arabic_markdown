@@ -1,7 +1,6 @@
 <?php
-$db = new MongoDatabase();
-$userModel = new UserModel($db);
-$authController = new AuthController($userModel);
+require base_path("Controllers/AuthController.php");
+$authController = new AuthController();
 
 // TODO - Forget Password Email
 // $authController->forgetPassword();

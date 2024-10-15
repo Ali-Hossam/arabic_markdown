@@ -8,7 +8,7 @@ use \Core\Session;
 
 $user = new User();
 $user::setId(Session::get('user_id'));
-$notesTitles = $user->getNotesTitles();
+$notesTitles = $user->getDocsTitles();
 
 view("edit.view.php", [
   "user" => $user

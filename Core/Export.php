@@ -1,6 +1,12 @@
 <?php
+
+namespace Core;
+
 require_once 'functions.php';
-require_once base_path('/vendor/autoload.php');
+require_once base_path('vendor/autoload.php');
+
+use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\IOFactory;
 
 class Export
 {
@@ -8,10 +14,10 @@ class Export
   {
     $fontsConfig = json_decode(file_get_contents(base_path('/assets/fonts.json')), true);
 
-    $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
+    $defaultConfig = (new \Mpdf\Config\ConfigVariables())->getDefaults();
     $fontDirs = $defaultConfig['fontDir'];
 
-    $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
+    $defaultFontConfig = (new \Mpdf\Config\FontVariables())->getDefaults();
     $fontData = $defaultFontConfig['fontdata'];
 
     // Add custom arabic fonts
@@ -31,6 +37,59 @@ class Export
   {
     $mpdf = Export::initMpdf();
     $mpdf->WriteHTML($html);
-    $mpdf->Output("$filename.pdf", "F"); // Make "D"
+
+    // Force download of the PDF
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="' . $filename . '.pdf"');
+    header('Cache-Control: private, max-age=0, must-revalidate');
+    header('Expires: 0');
+    header('Pragma: public');
+
+    $mpdf->Output("$filename.pdf", "D"); // Make "D"
+    exit;
+  }
+
+  public static function toDocx($html, $filename)
+  {
+    ob_end_clean(); // Clear output buffer
+
+    // Create a new PHPWord object
+    $phpWord = new PhpWord();
+
+    // Add a section
+    $section = $phpWord->addSection([
+      'direction' => 'rtl', // Set direction to RTL
+    ]);
+
+    // Load HTML and convert to Word elements
+    \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
+
+    // Set headers to prompt download
+    header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    header('Content-Disposition: attachment; filename="' . $filename . '.docx"');
+    header('Cache-Control: max-age=0');
+    header('Expires: 0');
+    header('Pragma: public');
+
+    // Save the Word document to output
+    $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
+    $objWriter->save('php://output');
+    exit;
+  }
+
+  public static function toHtml($html, $filename)
+  {
+    ob_end_clean(); // Clear output buffer
+
+    // Set headers to prompt download
+    header('Content-Type: text/html');
+    header('Content-Disposition: attachment; filename="' . $filename . '.html"');
+    header('Cache-Control: max-age=0');
+    header('Expires: 0');
+    header('Pragma: public');
+
+    // Output the HTML content
+    echo $html;
+    exit;
   }
 }

@@ -1,0 +1,15 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav-bar-height);
+  position: relative;
+  padding: 0 var(--left-padding) 0 var(--right-padding);
+  /* background-color: var(--palette-clr1); */
+  background-color: transparent;
+  z-index: 1;
+}
+
+.form-show {
+  display: none;
+}

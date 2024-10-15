@@ -2,8 +2,7 @@
 require base_path("Controllers/User.php");
 require base_path("Core/Session.php");
 
-$input = file_get_contents('php://input');
-$data = json_decode($input, true);
+$data = getJsonData();
 
 if (isset($data['name'])) {
   $avatarName = $data['name'];

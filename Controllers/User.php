@@ -44,24 +44,24 @@ class User
     return $userData[0];  // $userdata is an array of one element
   }
 
-  public function getNotes()
+  public function getDocs()
   {
     $userData = $this->getData();
     return iterator_to_array($userData['notes']) ?? [];
   }
 
-  public function getNote($title)
+  public function getDoc($title)
   {
-    $notes = $this->getNotes();
+    $notes = $this->getDocs();
     return $notes[$title];
   }
 
-  public function getNotesTitles()
+  public function getDocsTitles()
   {
-    return array_keys($this->getNotes());
+    return array_keys($this->getDocs());
   }
 
-  public function removeNote($noteTitle)
+  public function removeDoc($noteTitle)
   {
     $updateQuery = [
       '$unset' => [
@@ -107,5 +107,20 @@ class User
   {
     $userData = $this->getData();
     return $userData['name'];
+  }
+
+  public function addDoc($doc, $title)
+  {
+    $filter = [
+      '_id' => new ObjectId(self::$userId)
+    ];
+
+    $updateQuery = [
+      '$set' => [
+        "notes.$title" => $doc
+      ]
+    ];
+
+    $this->db->updateOne(DATA_COLLECTION, $filter, $updateQuery, true);
   }
 }

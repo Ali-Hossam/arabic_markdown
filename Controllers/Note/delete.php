@@ -1,10 +1,23 @@
 <?php
-// Get the raw input from the request
-$input = file_get_contents("php://input");
+require base_path("Controllers/User.php");
+require base_path("Core/Session.php");
 
-// Decode the JSON input
-$data = json_decode($input, true);
-$noteTitle = $data['title'];
+try {
+    $data = getJsonData();
 
-$user = new User();
-echo $user->removeNote($noteTitle);
+    // Get the note title
+    if (!isset($data['title'])) {
+        throw new Exception('Title is required.');
+    }
+
+    $noteTitle = $data['title'];
+
+    // Create a new User instance and remove the document
+    $user = new User();
+    $user->removeDoc($noteTitle);
+    echo "Note Removed";
+} catch (Exception $e) {
+    // Handle the error
+    http_response_code(400); // Bad Request
+    echo json_encode(['error' => $e->getMessage()]);
+}

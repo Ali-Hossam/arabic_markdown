@@ -1,12 +1,17 @@
-<?php require("partials/head.php") ?>
+<?php
+$title = "Reset Password";
+require("partials/head.php") 
+?>
 
 <body class="register-page">
   <form action="/reset-password" method="POST" class="register-form">
-    <img src="/assets/pen_icon_no_bkg.png" class="web_logo" width="140px">
+    <?php require("register/logo.php") ?>
 
     <?php if (isset($mailSent)) : ?>
       <div class="email-sent-container">
-        <img src="/assets/verified_.svg" alt="verified" class="width80">
+        <lottie-player src="https://lottie.host/a9635633-be5e-43e7-b35d-8f249cfc9eb1/wjQR4DEJCv.json"
+          background="##FFFFFF" speed="0.8"
+          style="width: 200px;" loop autoplay mode="normal"></lottie-player>
         <h3 class="margin8px">تم إرسال رابط إعادة تعيين كلمة السر على البريد الإلكتروني</h3>
       </div>
 
@@ -25,6 +30,8 @@
 
     <?php endif; ?>
   </form>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 

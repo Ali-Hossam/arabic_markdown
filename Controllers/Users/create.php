@@ -1,11 +1,18 @@
 <?php
+require base_path("Controllers/AuthController.php");
+require base_path("Controllers/User.php");
+require base_path("Core/Cookies.php");
 
-$db = new MongoDatabase();
-$userModel = new UserModel($db);
-$authController = new AuthController($userModel);
+use \Core\Cookies;
 
-if ($authController->register()) {
-  view("edit.view.php");
-} else {
-  view("register.view.php");
+$authController = new AuthController();
+$userId = $authController->register();
+
+if ($userId) {
+  redirectTo("/Controllers/User/show.php", [
+    'id' => $userId
+  ]);
 }
+
+view("register.view.php");
+exit;
