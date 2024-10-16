@@ -21,7 +21,7 @@ function displayFirstLevelDirectories($dir) {
 }
 
 // Specify the directory you want to start from (parent directory)
-$startDir = __DIR__ . '/..'; // Start from the parent directory
+$startDir = __DIR__ . '/'; // Start from the parent directory
 displayFirstLevelDirectories($startDir);
 require __DIR__ . '/../Core/functions.php';
 
