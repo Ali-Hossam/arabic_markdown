@@ -24,7 +24,7 @@ function displayDirectoryTree($dir, $level = 0)
 }
 
 // Specify the directory you want to start from
-$startDir = __DIR__; // Current directory
+$startDir = __DIR__ . '/..'; // Current directory
 displayDirectoryTree($startDir);
 require __DIR__ . '/../Core/functions.php';
 
