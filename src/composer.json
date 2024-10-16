@@ -1,0 +1,8 @@
+{
+    "require": {
+        "mpdf/mpdf": "^8.2",
+        "mongodb/mongodb": "^1.20",
+        "phpmailer/phpmailer": "^6.9",
+        "phpoffice/phpword": "^1.3"
+    }
+}
