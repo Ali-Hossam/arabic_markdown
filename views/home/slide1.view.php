@@ -13,6 +13,6 @@
 
   </div>
   <div class="slide1-left-column">
-    <?php require("views/home/round_img.view.php") ?>
+    <?php view("home/round_img.view.php") ?>
   </div>
 </div>

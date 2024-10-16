@@ -1,10 +1,9 @@
 <?php
-$title = "Edit";
-require("partials/head.php")
+view("partials/head.php", ["title" => "Edit"]);
 ?>
 
 <body class="edit-page">
-  <?php require("edit/edit_bar.view.php") ?>
+  <?php view("edit/edit_bar.view.php") ?>
 
   <div class="edit-page-container">
     <div class="flex-row editor-container">
@@ -49,4 +48,4 @@ require("partials/head.php")
 
 </body>
 
-<?php require("partials/footer.php") ?>
+<?php view("partials/footer.php") ?>

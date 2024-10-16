@@ -7,8 +7,9 @@ $router = new Router();
 $router->get('/', 'views/home.view.php');
 
 $router->get('/register', 'views/register.view.php');
+$router->get('/reset_password', 'views/forget_password.view.php');
 $router->post('/register', 'Controllers/Users/create.php');
-$router->post('/reset-password', 'Controllers/Users/resetPass.php');
+$router->post('/reset_password', 'Controllers/Users/resetPass.php');
 $router->post('/signout', 'Controllers/Users/logout.php');
 
 $router->get('/login', 'views/login.view.php');

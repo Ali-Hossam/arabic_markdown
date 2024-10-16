@@ -6,7 +6,7 @@ require("partials/head.php")
 <body>
 
   <div class="flex-col height100">
-    <?php require("views/home/nav_bar.view.php") ?>
+    <?php view("home/nav_bar.view.php") ?>
     <div class="flex-center height100">
 
       <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
