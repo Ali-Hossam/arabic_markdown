@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-require "../Core/functions.php";
+require __DIR__ . '/../Core/functions.php';
+
 require base_path("routes.php");
 require base_path("Core/ErrorsManager.php");
 require base_path("Core/Database.php");
