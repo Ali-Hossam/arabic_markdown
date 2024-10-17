@@ -15,7 +15,7 @@ view("partials/head.php", ["title" => "Login"]);
       <div class="form-group">
         <label for="password">كلمة السر</label>
         <div class="password-container">
-          <input type="password" id="password" name="password" placeholder="**************">
+          <input type="password" id="password" name="password" placeholder="**************" required>
           <img src="/assets/eye.svg" alt="show-password" class="show-password-icon">
         </div>
       </div>

@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+var_dump(getenv("MONGO_URL"));
+echo "<br>";
+dd($_SERVER);
 require __DIR__ . '/../Core/functions.php';
 
 require base_path("routes.php");
