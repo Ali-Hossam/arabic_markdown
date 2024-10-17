@@ -20,8 +20,7 @@ class MongoDatabase
       if ($username && $password) {
         $uri = "mongodb://$username:$password@$host";
       }
-
-      $uri = MONGO_URL ?? $uri;  // if connected to railway.app use its db
+      $uri = MONGO_URL ? MONGO_URL : $uri;  // if connected to railway.app use its db
 
       $this->client = new Client($uri);
       $this->db = $this->client->$dbname;

@@ -11,16 +11,21 @@ function base_path($path)
   return __DIR__ . "/../$path";
 }
 
+function public_path($path)
+{
+  return __DIR__ . "/../public/$path";
+}
+
 function view($path, $attributes = [])
 {
   extract($attributes);
   require base_path("views/$path");
 }
 
-function load_file($path) {
+function load_file($path)
+{
   require base_path($path);
   exit();
-
 }
 
 function redirectTo($path, $attributes = [])

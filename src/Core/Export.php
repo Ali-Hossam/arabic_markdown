@@ -20,9 +20,11 @@ class Export
     $defaultFontConfig = (new \Mpdf\Config\FontVariables())->getDefaults();
     $fontData = $defaultFontConfig['fontdata'];
 
+    $newFontsDir = array_map("public_path", $fontsConfig['fontDir']);
+    print_r($newFontsDir);
     // Add custom arabic fonts
     $mpdf = new \Mpdf\Mpdf([
-      'fontDir' => array_merge($fontDirs, $fontsConfig['fontDir']),
+      'fontDir' => array_merge($fontDirs, $newFontsDir),
       'fontdata' => $fontData + $fontsConfig['fonts'],
       'mode' => 'utf-8',
       'debug' => FALSE,
