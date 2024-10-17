@@ -35,6 +35,9 @@
   transition: all 100ms ease;
 }
 
+.form-group input {
+  width: 100%;
+}
 input {
   border-radius: 4px;
   max-height: 40px;
@@ -44,7 +47,6 @@ input {
   font-size: medium;
   font-family: var(--main-font);
   outline: none; /* Removes the default focus outline */
-  width: 100%;
 }
 
 

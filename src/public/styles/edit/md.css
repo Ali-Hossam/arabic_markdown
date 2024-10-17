@@ -24,6 +24,7 @@
 
 .content-viewer img {
   width: 100%;
+  padding: 20px;
 }
 
 .content-viewer ol {

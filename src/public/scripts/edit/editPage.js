@@ -2,11 +2,13 @@ import { Caret } from "../core/Caret.js";
 import { createDivElement, getCookie, getFromSession, setCookie } from "../core/functions.js";
 import { editor, themeManager } from "./shared.js";
 import { highlightLine } from "./utils/highlightActiveLine.js";
+import { parseMd } from "./utils/parseMd.js";
 
 // Initialize the editor
 function initializeEditor() {
   addFirstLine();
   setupEventListeners();
+  parseMd();
 }
 
 // Create and add the first line

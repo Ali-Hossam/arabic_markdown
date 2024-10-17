@@ -8,7 +8,9 @@ view("partials/head.php", ["title" => "Edit"]);
   <div class="edit-page-container">
     <div class="flex-row editor-container">
       <ul class="lines-numbers-container"></ul>
-      <div class="editor editor-area scrollbar" contenteditable="true"></div>
+      <div class="editor editor-area scrollbar" contenteditable="true">
+      <?php view("edit/init_page.view.php");?>
+      </div>
     </div>
 
     <div class="content-viewer editor-area border scrollbar"></div>
