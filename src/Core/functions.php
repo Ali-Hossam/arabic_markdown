@@ -17,14 +17,21 @@ function view($path, $attributes = [])
   require base_path("views/$path");
 }
 
+function load_file($path) {
+  require base_path($path);
+  exit();
+
+}
+
 function redirectTo($path, $attributes = [])
 {
-  // Build a query string from the attributes array
+  $url = $path;
   if (!empty($attributes)) {
     $queryString = http_build_query($attributes);
-    $path .= '?' . $queryString;
+    $url .= (parse_url($url, PHP_URL_QUERY) ? '&' : '?') . $queryString;
   }
-  header("Location: $path");
+
+  header("Location: $url", true);
   exit;
 }
 
@@ -41,6 +48,7 @@ function getJsonData()
   return $data;
 }
 
-function getCookie($key) {
+function getCookie($key)
+{
   return $_COOKIE[$key] ?? null;
 }

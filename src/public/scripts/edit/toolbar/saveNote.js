@@ -24,7 +24,7 @@ if (userProfile) {
   };
 
   const saveNote = async () => {
-    const filename = filenameInput.value;
+    const filename = filenameInput.value.trim();
     if (!filename) {
       filenameInput.classList.add("error");
       delayExec(() => filenameInput.classList.remove("error"), 500);

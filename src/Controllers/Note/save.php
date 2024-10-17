@@ -1,6 +1,7 @@
 <?php
+echo "POTATAO";
 require base_path("Controllers/User.php");
-require base_path("Core/Session.php");
+require_once base_path("Core/Session.php");
 
 $data = getJsonData();
 
@@ -9,5 +10,5 @@ if (isset($data['title']) && isset($data['doc'])) {
   $doc = $data['doc'];
 
   $user = new User();
-  echo $user->addDoc($doc, $noteTitle);
+  $user->addDoc($doc, $noteTitle);
 }

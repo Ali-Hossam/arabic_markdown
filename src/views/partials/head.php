@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/assets/pen_icon_no_bkg.png" type="image/x-icon">
-  <title><?=$title?></title>
+  <title><?= $title ?></title>
   <link rel="stylesheet" href="/styles/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,3 +25,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
+<!-- i put this script here as it is used across all views -->
+<script type="module">
+  import {
+    loadLib
+  } from "/scripts/core/functions.js";
+  loadLib("api.js");
+  loadLib("home/redirectToHome.js");
+</script>

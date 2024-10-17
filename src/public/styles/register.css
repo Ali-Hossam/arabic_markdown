@@ -107,6 +107,7 @@ a:hover {
   max-width: 400px;
   text-wrap: wrap;
   word-wrap: break-word;
+  align-self: flex-start;
 }
 
 .show-password-icon {

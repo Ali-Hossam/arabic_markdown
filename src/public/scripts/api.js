@@ -85,7 +85,7 @@ export async function exportDoc(doc, filename, type) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ filename: filename, doc: doc, type:type }),
+      body: JSON.stringify({ filename: filename, doc: doc, type: type }),
     });
     if (!response.ok) {
       throw new Error("Failed to export document");
@@ -94,6 +94,22 @@ export async function exportDoc(doc, filename, type) {
     return data;
   } catch (error) {
     console.error("Error saving Document: ", error);
+    throw error;
+  }
+}
+
+export async function getRequest(path) {
+  try {
+    const response = await fetch(path);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch Page");
+    }
+
+    const data = await response.text(); // expecting html response
+    return data;
+  } catch (error) {
+    console.error("Error Fetching Page: ", error);
     throw error;
   }
 }

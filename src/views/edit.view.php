@@ -3,7 +3,7 @@ view("partials/head.php", ["title" => "Edit"]);
 ?>
 
 <body class="edit-page">
-  <?php view("edit/edit_bar.view.php") ?>
+  <?php view("edit/edit_bar.view.php", ["user" => $user]) ?>
 
   <div class="edit-page-container">
     <div class="flex-row editor-container">
@@ -32,7 +32,6 @@ view("partials/head.php", ["title" => "Edit"]);
     } from "/scripts/core/functions.js";
     loadLib("edit/toolbar/dropdown/init.js");
     loadLib("edit/toolbar/dropdown/events.js");
-    loadLib("edit/utils/filterInput.js")
     loadLib("edit/utils/highlightActiveLine.js")
     loadLib("edit/utils/lineNumbers.js")
     loadLib("edit/utils/parseMd.js")

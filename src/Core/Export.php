@@ -12,7 +12,7 @@ class Export
 {
   private static function initMpdf()
   {
-    $fontsConfig = json_decode(file_get_contents(base_path('/assets/fonts.json')), true);
+    $fontsConfig = json_decode(file_get_contents('assets/fonts.json'), true);
 
     $defaultConfig = (new \Mpdf\Config\ConfigVariables())->getDefaults();
     $fontDirs = $defaultConfig['fontDir'];

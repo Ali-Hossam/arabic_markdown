@@ -13,3 +13,8 @@
 .form-show {
   display: none;
 }
+
+.home-redirect {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}

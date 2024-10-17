@@ -7,5 +7,6 @@ require base_path("routes.php");
 require base_path("Core/ErrorsManager.php");
 require base_path("Core/Database.php");
 require base_path("Core/Cookies.php");
+require base_path("Core/Session.php");
 
 $router->resolve($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);

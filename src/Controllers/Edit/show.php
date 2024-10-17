@@ -5,10 +5,9 @@ use Core\Cookies;
 $userId = Cookies::get('user_id');
 
 if ($userId) {
-  redirectTo("/Controllers/User/show.php", [
-    'id' => $userId
-  ]);
+  Session::put('user_id', $userId);
+  load_file('Controllers/User/show.php');
 }
 
-view("edit.view.php");
+view("edit.view.php", ["user" => null]);
 exit;

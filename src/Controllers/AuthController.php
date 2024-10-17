@@ -1,6 +1,6 @@
 <?php
 require base_path("Core/Auth.php");
-require base_path("Core/Session.php");
+require_once base_path("Core/Session.php");
 require base_path("Models/UserModel.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -28,22 +28,22 @@ class AuthController
     $password2 = $_POST['confirm_password'] ?? '';
 
     if (!Auth::email($email)) {
-      ErrorsManager::add("register", "Email is required");
+      ErrorsManager::add("register", "البريد الإلكتروني مطلوب");
       return false;
     }
 
     if ($this->userModel->getUserByEmail($email)) {
-      ErrorsManager::add("register", "There is an account with this Email.");
+      ErrorsManager::add("register", "يوجد حساب بهذا البريد الإلكتروني");
       return false;
     }
     
     if (!Auth::password($password1)) {
-      ErrorsManager::add("register", "Password must have special characters");
+      ErrorsManager::add("register", "كلمة السر يجب أن تحتوي على رموز مثل @#$ وتكون أكثر من 8 أحرف");
       return false;
     }
 
     if ($password1 !== $password2) {
-      ErrorsManager::add("register", "Passwords are not the same");
+      ErrorsManager::add("register", "كلمة السر غير متطابقة");
       return false;
     }
 
@@ -59,7 +59,7 @@ class AuthController
     $password = $_POST['password'] ?? '';
 
     if (!$this->userModel->validateUser($email, $password)) {
-      ErrorsManager::add("login", "Email or Password is incorrect");
+      ErrorsManager::add("login", "البريد الإلكتروني أو كلمة السر غير صحيحة");
       return false;
     }
 
@@ -77,7 +77,7 @@ class AuthController
     if (!$email) return false;
 
     if (!$this->userModel->getUserByEmail($email)) {
-      ErrorsManager::add("forgetPassword", "The Given Email doesn't have an accout");
+      ErrorsManager::add("forgetPassword", "لا يوجد حساب لهذا البريد الإلكتروني");
       return false;
     }
 

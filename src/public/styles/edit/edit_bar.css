@@ -245,7 +245,3 @@
   display: flex;
   transition: background-color 0.5s;
 }
-
-.home-link:hover {
-  text-decoration: none;
-}

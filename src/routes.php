@@ -23,3 +23,5 @@ $router->get('/note', 'Controllers/Note/show.php');
 $router->post('/note/save', 'Controllers/Note/save.php');
 $router->post('/note/export', 'Controllers/Note/export.php');
 $router->delete('/note', 'Controllers/Note/delete.php');
+
+$router->get('/user/show', 'Controllers/User/show.php');

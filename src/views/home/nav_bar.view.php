@@ -1,6 +1,5 @@
 <ul class="nav-bar">
-  <a href="http://localhost:8000" class="home-link">
-    <div class="website-logo">
+    <div class="website-logo home-redirect">
       <img src="/assets/pen_icon_no_bkg.png" alt="website-icon" />
       <h1 class="logo">محبرة</h1>
     </div>

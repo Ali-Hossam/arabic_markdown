@@ -120,7 +120,6 @@ class User
         "notes.$title" => $doc
       ]
     ];
-
-    $this->db->updateOne(DATA_COLLECTION, $filter, $updateQuery, true);
+    return $this->db->updateOne(DATA_COLLECTION, $filter, $updateQuery, true);
   }
 }
