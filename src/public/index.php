@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once base_path("config.php");
 var_dump(getenv(MONGO_URL));
 echo "<br>";
 dd($_SERVER);
