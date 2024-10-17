@@ -1,10 +1,11 @@
 <?php
 session_start();
-require_once base_path("config.php");
-var_dump(getenv(MONGO_URL));
 echo "<br>";
 dd($_SERVER);
 require __DIR__ . '/../Core/functions.php';
+
+require_once base_path("config.php");
+var_dump(getenv(MONGO_URL));
 
 require base_path("routes.php");
 require base_path("Core/ErrorsManager.php");
