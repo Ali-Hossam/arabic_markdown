@@ -1,10 +1,10 @@
 {
   "fontDir": [
-    "/assets/Fonts/Amiri",
-    "/assets/Fonts/Aref_Ruqaa",
-    "/assets/Fonts/Baloo_Bhaijaan_2",
-    "/assets/Fonts/Zain",
-    "/assets/Fonts/Lateef"
+    "/home/ali/websites/arabic_markdown/src/public/assets/Fonts/Amiri",
+    "/home/ali/websites/arabic_markdown/src/public/assets/Fonts/Aref_Ruqaa",
+    "/home/ali/websites/arabic_markdown/src/public/assets/Fonts/Baloo_Bhaijaan_2",
+    "/home/ali/websites/arabic_markdown/src/public/assets/Fonts/Zain",
+    "/home/ali/websites/arabic_markdown/src/public/assets/Fonts/Lateef"
   ],
   "fonts": {
     "amiri": {
