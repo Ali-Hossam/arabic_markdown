@@ -6,7 +6,9 @@ $authController = new AuthController();
 $userId = $authController->register();
 
 if ($userId) {
+  redirectTo("/");
   load_file("/Controllers/User/show.php");
 }
 
 view("register.view.php");
+exit();
