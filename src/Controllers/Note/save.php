@@ -1,5 +1,4 @@
 <?php
-echo "POTATAO";
 require base_path("Controllers/User.php");
 require_once base_path("Core/Session.php");
 

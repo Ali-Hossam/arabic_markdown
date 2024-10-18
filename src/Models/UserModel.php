@@ -46,7 +46,7 @@ class UserModel
       "password" => password_hash($password, PASSWORD_BCRYPT),
       "email" => $email,
       "picture" => "/assets/profiles/users-1.svg",
-      "notes" => []
+      "notes" => (object)[]
     ];
 
     $result = $this->db->insertOne(DATA_COLLECTION, $data);
