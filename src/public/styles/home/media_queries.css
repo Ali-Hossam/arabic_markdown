@@ -19,7 +19,7 @@
     flex-direction: column;
   }
 
-  .box-item1 img{
+  .box-item1 img {
     max-width: 40%;
   }
 
@@ -40,13 +40,17 @@
     font-size: 80%;
     padding: 0 4px;
   }
-  
+
   .code-text {
     font-size: small !important;
   }
 
   #slide1 {
     min-height: fit-content;
+  }
+  
+  .slide h2 {
+    margin: 40px 0px !important;
   }
 
   @media (max-width: 620px) {
@@ -82,10 +86,9 @@
       border-radius: var(--border-radius);
       margin-top: 16px;
     }
-    
+
     .grid-item.bottom-bar {
       background-image: url("/assets/computer.png");
-      
     }
     .top-bar .grid-item.left {
       display: none;
@@ -100,6 +103,5 @@
     .code-text {
       display: none;
     }
-  
   }
 }
