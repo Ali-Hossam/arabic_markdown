@@ -78,11 +78,23 @@
     margin-left: 4px;
   }
 
-  /* .edit-bar-icons-container {
-    overflow-x: scroll;
-    justify-content: flex-start;
-  } */
   .edit-bar-icons-container::-webkit-scrollbar {
     display: none; /* Hide scrollbar */
+  }
+
+  #filename-input {
+    width: 100%;
+  }
+
+  .website-logo img {
+    width: 20px;
+  }
+
+  .dropdown {
+    padding: 0 1px;
+  }
+
+  .edit-bar {
+    padding: 6px;
   }
 }
