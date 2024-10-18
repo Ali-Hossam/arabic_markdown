@@ -75,6 +75,7 @@
 
     .slide1-left-column {
       height: 300px;
+      pointer-events: none;
     }
 
     .bottom-bar {
