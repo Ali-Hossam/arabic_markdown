@@ -81,7 +81,11 @@
       border-radius: var(--border-radius);
       margin-top: 16px;
     }
-
+    
+    .grid-item.bottom-bar {
+      background-image: url("/assets/computer.png");
+      
+    }
     .top-bar .grid-item.left {
       display: none;
     }
@@ -93,7 +97,7 @@
       padding-left: 0;
     }
     .code-text {
-      top: 20%;
+      display: none;
     }
   
   }
