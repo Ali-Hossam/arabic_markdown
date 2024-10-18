@@ -42,13 +42,18 @@
   }
   
   .code-text {
-    font-size: small;
+    font-size: small !important;
   }
 
-  @media (max-width: 520px) {
+  #slide1 {
+    min-height: fit-content;
+  }
+
+  @media (max-width: 620px) {
     #slide1 {
       display: flex;
       flex-direction: column;
+      min-height: fit-content;
     }
 
     .top-bar {
@@ -87,5 +92,9 @@
     .slide1-right-column {
       padding-left: 0;
     }
+    .code-text {
+      top: 20%;
+    }
+  
   }
 }
