@@ -4,7 +4,7 @@
 
 ## Overview
 This project is a web-based note-taking application specifically designed for Arabic users. It allows users to create, edit, and manage markdown notes with a focus on Arabic language support.
-<img src="src/public/assets/logo.png">
+<img src="src/public/assets/logo.svg">
 
 live demo: [Mahbara](https://mahbara.up.railway.app/)
 ## Tech Stack
