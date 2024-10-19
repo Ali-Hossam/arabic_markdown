@@ -14,7 +14,7 @@ const fontsEn = [
   "Amiri",
   "rakkas",
   "Noto Naskh Arabic",
-  "Baloo Bhaijaan 2",
+  "'Baloo Bhaijaan 2'",
   "zain",
   "Lateef",
 ];
