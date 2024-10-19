@@ -38,7 +38,7 @@ class AuthController
     }
     
     if (!Auth::password($password1)) {
-      ErrorsManager::add("register", "كلمة السر يجب أن تحتوي على رموز مثل @#$ وتكون أكثر من 8 أحرف");
+      ErrorsManager::add("register", "كلمة السر يجب أن تكون أكثر من 8 حروف");
       return false;
     }
 
